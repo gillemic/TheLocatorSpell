@@ -1,0 +1,45 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block head %}
+{{ super() }}
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='BOM_logo.ico') }}">
+<title>
+{% block title %}
+  {% if title %}{{ title }} - The Locator Spell{% else %}Welcome to The Locator Spell{% endif %}
+{% endblock %}
+</title>
+<meta charset="UTF-8">
+<meta name="description" content="The Locator Spell is a media group dedicated to finding events for nerds">
+<meta name="keywords" content="Locator, Spell, Locator Spell, Bad Orc Media">
+<meta name="author" content="Michael Gillett">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+{% endblock %}
+
+{% block navbar %}
+  <nav class="header">
+    <div class="navbar-top">
+      <img src="{{ url_for('static', filename='BOM_logo.png') }}">
+      <h2>The Locator Spell</h2>
+    </div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+    </div>
+  </nav>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-info" role="alert">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+      {% endwith %}
+
+      {# application content needs to be provided in the app_content block #}
+    {% block app_content %}{% endblock %}
+  </div>
+{% endblock %}

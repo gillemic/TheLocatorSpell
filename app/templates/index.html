@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <div class="main-page">
+        <h2>Welcome to The Locator Spell</h2>
+        <br>
+        <div class="page-content">
+            <form method="post" class="main-form">
+                <label for="activity">Activity</label>
+                <br>
+                <input type="text" name="activity"
+                       placeholder="Activity Name"
+                       value="{{ request.form['activity'] }}"></input>
+                <br>
+                <br>
+
+                <label for="location">Location</label>
+                <br>
+                <input type="text" name="Location"
+                       placeholder="Location Name"
+                       value="{{ request.form['location'] }}"></input>
+                <br>
+                <label for="range">within</label>
+                <br>
+                <input type="range" min="1" max="100" value="100" class="slider" id="withinRange">
+                <label for="miles">miles</label>
+                <br>
+                <br>
+
+                <label for="category">Category</label>
+                <br>
+                <input type="checkbox" id="localCheckbox">
+                <label for="category">Local</label>
+                <input type="checkbox" id="minorCheckbox">
+                <label for="category">Minor</label>
+                <input type="checkbox" id="majorCheckbox">
+                <label for="category">Major</label>
+                <br>
+                <br>
+
+                <label for="range">Price</label>
+                <br>
+                <input type="range" min="0" max="100" value="100" class="slider" id="priceRange">
+                <br>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
