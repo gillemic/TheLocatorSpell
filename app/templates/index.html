@@ -45,7 +45,22 @@
 
                 <button type="submit">Submit</button>
             </form>
-            <div id="pageData"></div>
+            <div id="pageData">
+                <input type="text" id="quickSearch"
+                       placeholder="Quick search..."
+                       onkeyup="quickSearch()" />
+                {% for piece in data %}
+                    <div class="event">
+                        <h1>{{ piece.activity_name }}</h1>
+                        <br>
+                        <small>Location: {{ piece.location }}</small>
+                        <br>
+                        <small>Category: {{ piece.category }}</small>
+                        <br>
+                        <small>Price: ${{ piece.price }}</small>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
         <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
     </div>

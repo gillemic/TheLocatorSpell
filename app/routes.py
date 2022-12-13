@@ -1,5 +1,5 @@
 import os
-from flask import render_template, send_from_directory
+from flask import Flask, render_template, url_for, json
 from flask_flatpages import FlatPages
 from app import app
 
@@ -16,7 +16,10 @@ latest = sorted(pages, reverse=True, key=lambda p: str(p.meta['date']))
 @app.route('/')
 @app.route('/index')
 def index():
-	return render_template('index.html', title='Home', pages=latest, trunc=smart_truncate)
+    SITE_ROOT = app.root_path
+    json_url = os.path.join(SITE_ROOT, "static", "MOCK_DATA.json")
+    data = json.load(open(json_url))
+    return render_template('index.html', title='Home', data=data)
 
 @app.route('/about')
 def about():

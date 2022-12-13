@@ -260,6 +260,10 @@
     transition: 0.5s;
 }
 
+.main-page {
+    height: auto;
+}
+
 .main-page h2 {
     color: rgb(0, 0, 0);
     margin-bottom: 0;
@@ -279,4 +283,29 @@
 .main-form {
     border: 1px solid black;
     padding: 1rem;
+}
+
+#pageData {
+    border: 1px solid green;
+    display: flex;
+    flex-wrap: wrap;
+    width: 75vw;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#quickSearch {
+    width: 90%;
+    margin-bottom: 1rem;
+    margin: 1rem auto;
+}
+
+.event {
+    background-color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1rem;
+    margin: 0.5rem;
+    flex: 1 1 21%;
+    max-width: 24%;
 }
