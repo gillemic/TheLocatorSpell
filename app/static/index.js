@@ -14,27 +14,26 @@ function quickSearch() {
     filter = input.value.toUpperCase();
     events = document.getElementsByClassName('event');
 
-    loop1:
     for (const i in events) {
         h = events[i].getElementsByTagName("h1")[0];
         others = events[i].getElementsByTagName("small");
 
+        console.log(others);
+
         text = h.textContent || h.innerText;
         if (text.toUpperCase().indexOf(filter) > -1) {
             events[i].style.display = "";
-            continue;
         } else {
             events[i].style.display = "none";
         }
 
-        // loop2:
-        // for (const j in others) {
-        //     otherText = others[j].textContent || others[j].innerText;
-        //     if (otherText.toUpperCase().indexOf(filter) > -1) {
-        //         events[i].style.display = "";
-        //     } else {
-        //         events[i].style.display = "none";
-        //     }
-        // }
+        for (const j in others) {
+            otherText = others[j].textContent || others[j].innerText;
+            if (otherText.toUpperCase().indexOf(filter) > -1) {
+                events[i].style.display = "";
+            } else {
+                events[i].style.display = "none";
+            }
+        }
     }
 }
