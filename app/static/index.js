@@ -17,7 +17,7 @@ function quickSearch() {
     for (const i in events) {
         show = false;
         h = events[i].getElementsByTagName("h1")[0];
-        others = events[i].getElementsByTagName("p");
+        others = events[i].getElementsByTagName("b");
 
         console.log(others);
 
