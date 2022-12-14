@@ -5,7 +5,7 @@
         <h2>Welcome to The Locator Spell</h2>
         <br>
         <div class="page-content">
-            <form method="post" class="main-form">
+            <form action="" method="get" name="main-form" class="main-form" onsubmit="mainSearch(); return false;">
                 <label for="activity">Activity</label>
                 <br>
                 <input type="text" name="activity"
@@ -22,7 +22,7 @@
                 <br>
                 <label for="range">within</label>
                 <br>
-                <input type="range" min="1" max="100" value="100" class="slider" id="withinRange" oninput="this.nextElementSibling.value = this.value">
+                <input type="range" min="1" max="100" value="100" class="slider" name="withinRange" oninput="this.nextElementSibling.value = this.value">
                 <output>100</output>
                 <label for="miles">miles</label>
                 <br>
@@ -55,11 +55,11 @@
                     <div class="event">
                         <h1>{{ piece.activity_name }}</h1>
                         <br>
-                        <small>Location: {{ piece.location }}</small>
+                        <small>Location: <p>{{ piece.location }}</p></small>
                         <br>
-                        <small>Category: {{ piece.category }}</small>
+                        <small>Category: <p>{{ piece.category }}</p></small>
                         <br>
-                        <small>Price: ${{ piece.price }}</small>
+                        <small>Price: $<p>{{ piece.price }}</p></small>
                     </div>
                 {% endfor %}
             </div>
