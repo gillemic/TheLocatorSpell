@@ -15,6 +15,7 @@ function quickSearch() {
     events = document.getElementsByClassName('event');
 
     for (const i in events) {
+        show = false;
         h = events[i].getElementsByTagName("h1")[0];
         others = events[i].getElementsByTagName("small");
 
@@ -27,13 +28,14 @@ function quickSearch() {
             events[i].style.display = "none";
         }
 
-        for (const j in others) {
+        /*for (const j in others) {
             otherText = others[j].textContent || others[j].innerText;
+            console.log(otherText);
             if (otherText.toUpperCase().indexOf(filter) > -1) {
                 events[i].style.display = "";
             } else {
                 events[i].style.display = "none";
             }
-        }
+        }*/
     }
 }

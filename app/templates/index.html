@@ -22,7 +22,8 @@
                 <br>
                 <label for="range">within</label>
                 <br>
-                <input type="range" min="1" max="100" value="100" class="slider" id="withinRange">
+                <input type="range" min="1" max="100" value="100" class="slider" id="withinRange" oninput="this.nextElementSibling.value = this.value">
+                <output>100</output>
                 <label for="miles">miles</label>
                 <br>
                 <br>
@@ -40,7 +41,8 @@
 
                 <label for="range">Price</label>
                 <br>
-                <input type="range" min="0" max="100" value="100" class="slider" id="priceRange">
+                <input type="range" min="0" max="100" value="100" class="slider" id="priceRange" oninput="this.nextElementSibling.value = this.value">
+                <output>100</output><p>dollars</p>
                 <br>
 
                 <button type="submit">Submit</button>
