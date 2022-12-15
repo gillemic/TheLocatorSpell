@@ -285,6 +285,11 @@
     padding: 1rem;
 }
 
+.main-form u {
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
 #pageData {
     border: 1px solid green;
     display: flex;

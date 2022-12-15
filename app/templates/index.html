@@ -5,30 +5,30 @@
         <h2>Welcome to The Locator Spell</h2>
         <br>
         <div class="page-content">
-            <form action="" method="get" name="main-form" class="main-form" onsubmit="mainSearch(); return false;">
-                <label for="activity">Activity</label>
+            <form name="main-form" class="main-form">
+                <label for="activity"><u>Activity</u></label>
                 <br>
-                <input type="text" name="activity"
+                <input type="text" name="activity" id="activity"
                        placeholder="Activity Name"
                        value="{{ request.form['activity'] }}"></input>
                 <br>
                 <br>
 
-                <label for="location">Location</label>
+                <label for="location"><u>Location</u></label>
                 <br>
-                <input type="text" name="Location"
+                <input type="text" name="location" id="location"
                        placeholder="Location Name"
                        value="{{ request.form['location'] }}"></input>
                 <br>
                 <label for="range">within</label>
                 <br>
-                <input type="range" min="1" max="100" value="100" class="slider" name="withinRange" oninput="this.nextElementSibling.value = this.value">
+                <input type="range" min="1" max="100" value="100" class="slider" name="withinRange" id="withinRange" oninput="this.nextElementSibling.value = this.value">
                 <output>100</output>
                 <label for="miles">miles</label>
                 <br>
                 <br>
 
-                <label for="category">Category</label>
+                <label for="category"><u>Category</u></label>
                 <br>
                 <input type="checkbox" id="localCheckbox">
                 <label for="category">Local</label>
@@ -39,13 +39,13 @@
                 <br>
                 <br>
 
-                <label for="range">Price</label>
+                <label for="range"><u>Price</u></label>
                 <br>
-                <input type="range" min="0" max="100" value="100" class="slider" id="priceRange" oninput="this.nextElementSibling.value = this.value">
+                <input type="range" min="0" max="100" value="100" class="slider" id="price" oninput="this.nextElementSibling.value = this.value">
                 <output>100</output><p>dollars</p>
                 <br>
 
-                <button type="submit">Submit</button>
+                <button type="button" onclick="advancedSearch()">Submit</button>
             </form>
             <div id="pageData">
                 <input type="text" id="quickSearch"
