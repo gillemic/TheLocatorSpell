@@ -18,7 +18,7 @@
 
     .page-content {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         width: 100%;
     }
 
@@ -116,7 +116,7 @@
 
     .page-content {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         width: 100%;
     }
 
@@ -158,8 +158,6 @@
 @media screen and (min-width: 780px) {
     .container h1, div {
         margin: 0;
-        /* float: left; */
-        /* width: 100%; */
     }
 
     .header a {
@@ -269,6 +267,12 @@
     margin-bottom: 0;
 }
 
+.page-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
 .about {
     display: block;
     width: 75%;
@@ -280,12 +284,12 @@
     padding: 2rem;
 }
 
-.main-form {
+#main-form {
     border: 1px solid black;
     padding: 1rem;
 }
 
-.main-form u {
+#main-form u {
     font-size: 1.75rem;
     font-weight: bold;
 }
@@ -293,10 +297,11 @@
 #pageData {
     border: 1px solid green;
     display: flex;
+    flex: 1 1 24%;
     flex-wrap: wrap;
-    width: 75vw;
-    align-items: flex-start;
     justify-content: center;
+    /*margin: 0 1rem;*/
+    padding: 1rem;
 }
 
 #quickSearch {
@@ -307,10 +312,17 @@
 
 .event {
     background-color: white;
-    font-size: 1.5rem;
+    font-size: calc(1rem + 0.5vw);
     text-align: center;
     padding: 1rem;
     margin: 0.5rem;
     flex: 1 1 21%;
     max-width: 24%;
+    min-width: 200px;
+    white-space: nowrap;
+}
+
+.event h2 {
+    font-size: calc(1rem + 1vw);
+    text-decoration: underline;
 }

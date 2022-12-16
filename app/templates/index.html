@@ -2,10 +2,10 @@
 
 {% block app_content %}
     <div class="main-page">
-        <h2>Welcome to The Locator Spell</h2>
+        <h2>Events</h2>
         <br>
         <div class="page-content">
-            <form name="main-form" class="main-form">
+            <form name="main-form" id="main-form">
                 <label for="activity"><u>Activity</u></label>
                 <br>
                 <input type="text" name="activity" id="activity"
@@ -46,6 +46,7 @@
                 <br>
 
                 <button type="button" onclick="advancedSearch()">Submit</button>
+                <button type="reset" onclick="clearFields()">Reset</button>
             </form>
             <div id="pageData">
                 <input type="text" id="quickSearch"
@@ -53,7 +54,7 @@
                        onkeyup="quickSearch()" />
                 {% for piece in data %}
                     <div class="event">
-                        <h1>{{ piece.activity_name }}</h1>
+                        <h2>{{ piece.activity_name }}</h2>
                         <br>
                         <small>Location: <b>{{ piece.location }}</b></small>
                         <br>
