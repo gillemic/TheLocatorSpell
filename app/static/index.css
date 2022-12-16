@@ -221,7 +221,7 @@
 #main-form {
     border: 1px solid black;
     padding: 1rem;
-    flex: 1 1 25%;
+    flex: 1 1;
     width: 100%;
 }
 
@@ -251,8 +251,8 @@
     text-align: center;
     padding: 1rem;
     margin: 0.5rem;
-    flex: 1 1 21%;
-    max-width: 24%;
+    flex: 1 1 24%;
+    max-width: 50%;
     min-width: 200px;
     white-space: nowrap;
 }
