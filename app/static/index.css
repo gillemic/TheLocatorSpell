@@ -211,7 +211,6 @@
 
 .main-page h2 {
     color: rgb(0, 0, 0);
-    margin-bottom: 0;
 }
 
 .page-content {
@@ -239,7 +238,11 @@
 }
 
 .form-wrapper a {
-    margin: 0 1rem;
+    margin: 0.5rem 0;
+}
+
+.form-wrapper a:hover {
+    cursor: pointer;
 }
 
 .showhide-wrapper {
