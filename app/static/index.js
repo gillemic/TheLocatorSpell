@@ -111,3 +111,23 @@ function clearFields() {
         events[i].style.display = "";
     }
 }
+
+function hideSearch() {
+    let form = document.getElementById('main-form');
+    let hideButton = document.getElementById('hide-button');
+    let showButton = document.getElementById('show-button');
+    
+    form.style.display = 'none';
+    hideButton.style.display = 'none';
+    showButton.style.display = 'block';
+}
+
+function showSearch() {
+    let form = document.getElementById('main-form');
+    let hideButton = document.getElementById('hide-button');
+    let showButton = document.getElementById('show-button');
+    
+    form.style.display = 'block';
+    hideButton.style.display = 'block';
+    showButton.style.display = 'none';
+}
