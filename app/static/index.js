@@ -1,5 +1,5 @@
 function quickSearch() {
-    let input, filter, events, h, text, others, otherText, show;
+    let input, filter, events, h, text, others, otherText, show, hits = 0;
     input = document.getElementById('quickSearch');
     filter = input.value.toUpperCase();
     events = document.getElementsByClassName('event');
@@ -23,15 +23,21 @@ function quickSearch() {
 
         if (show) {
             events[i].style.display = "";
+            hits++;
         }
         else {
             events[i].style.display = "none";
+        }
+
+        if (!hits) {
+            let noResults = document.getElementById('no-results');
+            noResults.style.display = 'block';
         }
     }
 }
 
 function advancedSearch() {
-    let events, name, location, distance, localCheckbox, minorCheckbox, majorCheckbox, show, h, others, text;
+    let events, name, location, distance, localCheckbox, minorCheckbox, majorCheckbox, show, h, others, text, hits = 0;
     name = document.getElementById('activity').value ?? '';
     location = document.getElementById('location').value ?? '';
     distance = document.getElementById('withinRange').value ?? '';
@@ -97,9 +103,15 @@ function advancedSearch() {
 
         if (show) {
             events[i].style.display = "";
+            hits++;
         }
         else {
             events[i].style.display = "none";
+        }
+
+        if (!hits) {
+            let noResults = document.getElementById('no-results');
+            noResults.style.visibility = 'show';
         }
     }
 }

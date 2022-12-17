@@ -50,8 +50,8 @@
                     <br>
                 </form>
                 <div class="showhide-wrapper">
-                    <a id="hide-button" onclick="hideSearch()">Hide Search</a>
-                    <a id="show-button" onclick="showSearch()">Show Search</a>
+                    <a id="hide-button" onclick="hideSearch()">Hide Advanced Search</a>
+                    <a id="show-button" onclick="showSearch()">Show Advanced Search</a>
                 </div>
             </div>
             <div id="pageData">
@@ -69,6 +69,7 @@
                         <small>Price: $<b>{{ piece.price }}</b></small>
                     </div>
                 {% endfor %}
+                <div id="no-results">No results found</div>
             </div>
         </div>
         <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
