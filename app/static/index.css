@@ -235,6 +235,11 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+    margin-top: 1rem;
+}
+
+.page-content h4 {
+    font-weight: bold;
 }
 
 .about {
@@ -242,6 +247,8 @@
     width: 100%;
     max-width: 1200px;
     background-color: white;
+    border: 1px solid black;
+    border-radius: 1rem;
 }
 
 .about p {
@@ -251,6 +258,7 @@
 
 .form-wrapper {
     border: 1px solid black;
+    border-radius: 1rem;
     background-color: #bebebe;
     display: block;
     flex: 1 1;
@@ -281,6 +289,11 @@
 #main-form u {
     font-size: 1.75rem;
     font-weight: bold;
+}
+
+#main-form h2 {
+    margin-top: 0;
+    text-align: center;
 }
 
 #hide-button {
@@ -316,9 +329,11 @@
     padding: 1rem;
     margin: 0.5rem;
     flex: 1 1 24%;
-    max-width: 50%;
+    max-width: 24%;
     min-width: 200px;
     white-space: nowrap;
+    box-shadow: 0.5rem 0.5rem 0.5rem rgb(43, 43, 43);
+    border-radius: 1rem;
 }
 
 .event h2 {

@@ -29,7 +29,11 @@ function quickSearch() {
             events[i].style.display = "none";
         }
 
-        if (!hits) {
+        if (hits) {
+            let results = document.getElementById('no-results');
+            results.style.display = 'none';
+        }
+        else {
             let noResults = document.getElementById('no-results');
             noResults.style.display = 'block';
         }

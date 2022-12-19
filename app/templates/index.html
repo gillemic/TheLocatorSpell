@@ -2,13 +2,14 @@
 
 {% block app_content %}
     <div class="main-page">
-        <h2>Events</h2>
         <div class="page-content">
             <div class="form-wrapper">
                 <form name="main-form" id="main-form">
+                    <h2>Spell Components</h2>
                     <label for="activity"><u>Activity</u></label>
                     <br>
                     <input type="text" name="activity" id="activity"
+                        onkeyup="advancedSearch()"
                         placeholder="Activity Name"
                         value="{{ request.form['activity'] }}"></input>
                     <br>
@@ -17,6 +18,7 @@
                     <label for="location"><u>Location</u></label>
                     <br>
                     <input type="text" name="location" id="location"
+                        onkeyup="advancedSearch()"
                         placeholder="Location Name"
                         value="{{ request.form['location'] }}"></input>
                     <br>
@@ -30,22 +32,21 @@
 
                     <label for="category"><u>Category</u></label>
                     <br>
-                    <input type="checkbox" id="localCheckbox">
+                    <input type="checkbox" id="localCheckbox" onclick="advancedSearch()">
                     <label for="category">Local</label>
-                    <input type="checkbox" id="minorCheckbox">
+                    <input type="checkbox" id="minorCheckbox" onclick="advancedSearch()">
                     <label for="category">Minor</label>
-                    <input type="checkbox" id="majorCheckbox">
+                    <input type="checkbox" id="majorCheckbox" onclick="advancedSearch()">
                     <label for="category">Major</label>
                     <br>
                     <br>
 
                     <label for="range"><u>Price</u></label>
                     <br>
-                    <input type="range" min="0" max="100" value="100" class="slider" id="price" oninput="this.nextElementSibling.value = this.value">
+                    <input type="range" min="0" max="100" value="100" class="slider" id="price" oninput="this.nextElementSibling.value = this.value" onclick="advancedSearch()">
                     <output>100</output><p>dollars</p>
                     <br>
 
-                    <button type="button" onclick="advancedSearch()">Submit</button>
                     <button type="reset" onclick="clearFields()">Reset</button>
                     <br>
                 </form>
@@ -55,8 +56,9 @@
                 </div>
             </div>
             <div id="pageData">
+                <h4>Quick Cast</h4>
                 <input type="text" id="quickSearch"
-                       placeholder="Quick search..."
+                       placeholder="Looking for something?"
                        onkeyup="quickSearch()" />
                 {% for piece in data %}
                     <div class="event">
