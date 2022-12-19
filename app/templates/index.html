@@ -68,7 +68,7 @@
                         <br>
                         <small>Category: <b>{{ piece.category }}</b></small>
                         <br>
-                        <small>Price: $<b>{{ piece.price }}</b></small>
+                        <small>Price: <b>{{ calcPrice(piece.price) }}</b></small>
                     </div>
                 {% endfor %}
                 <div id="no-results">No results found</div>

@@ -147,3 +147,12 @@ function showSearch() {
     hideButton.style.display = 'block';
     showButton.style.display = 'none';
 }
+
+function calcPrice(price) {
+    if (price > 0) {
+        return `$${price}`;
+    }
+    else {
+        return 'Free';
+    }
+}
