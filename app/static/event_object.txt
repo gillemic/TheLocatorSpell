@@ -1,0 +1,15 @@
+id: INT of Numerical entry into database
+Name: String of name of the event*
+TO: String of tournament organizer*
+Location: String of physical address*
+Type: String of name of game or event type*
+Catagory: String of "Local", "Minor", "Major"
+Start_Date: Date string of when event will start*
+End_Date: Date string of when event will end
+Charity: Boolean is or isn't charaity event
+Promoted: Boolean is or isn't promoted event
+Price: String of dollar value*
+URL: String of direct URL address
+Description: String of event description*
+
+{"id":, "Name":, "TO":, "Location":, "Type":, "Event_Cat":, "Start_Date":, "End_Date":, "Charity":, "Promoted":, "Price":, "URL":, "Description":}

@@ -23,8 +23,9 @@
       <h2>The Locator Spell</h2>
     </div>
     <div class="nav-links">
-      <a href="/">Home</a>
-      <a href="/about">About</a>
+      <a href="{{ url_for('index') }}">Home</a>
+      <a href="{{ url_for('events') }}">Events</a>
+      <a href="{{ url_for('about') }}">About</a>
     </div>
   </nav>
 {% endblock %}

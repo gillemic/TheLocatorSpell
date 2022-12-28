@@ -312,6 +312,13 @@
     padding: 0 1rem;
 }
 
+#banner {
+    display: block;
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
 #quickSearch {
     display: block;
     width: 95%;
