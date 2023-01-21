@@ -71,5 +71,8 @@
             </div>
         </div>
         <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+        {% if (query != '') %}
+            <script type="text/javascript">quickSearch(query)</script>
+        {% endif %}
     </div>
 {% endblock %}

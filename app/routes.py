@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, url_for, json
+from flask import Flask, render_template, url_for, json, request
 from flask_flatpages import FlatPages
 from app import app
 
@@ -27,7 +27,8 @@ def events():
     SITE_ROOT = app.root_path
     json_url = os.path.join(SITE_ROOT, "static", "NEW_MOCK_DATA.json")
     data = json.load(open(json_url))
-    return render_template('events.html', title='Events', data=data)
+    query = request.args.get('query')
+    return render_template('events.html', title='Events', data=data, query=query)
 
 @app.route('/<path:path>.html')
 def page(path):

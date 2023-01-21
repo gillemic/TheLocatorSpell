@@ -7,8 +7,12 @@
                 <img id="banner" src="{{ url_for('static', filename='banner.gif') }}">
                 <br>
                 <h4>The Locator Spell</h4>
-                <input type="text" id="quickSearch"
-                       placeholder="Quick Cast" />
+                <br>
+                <form action="/events" method="GET">
+                    <input type="text" id="quickSearch" name="query"
+                        placeholder="Quick Cast" />
+                    <button type="submit"  onclick="quickSearch()">Search</button>
+                </form>
                 <br>
                 <h4><a href="{{ url_for('events') }}">Browse All Events</a></h4>
             </div>
