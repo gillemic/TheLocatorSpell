@@ -347,3 +347,10 @@
     font-size: calc(1rem + 0.75vw);
     text-decoration: underline;
 }
+
+.welcome_vid {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    pointer-events: none;
+}
