@@ -1,25 +1,22 @@
-{% extends "base.html" %}
+{% extends "landing.html" %}
 
 {% block app_content %}
-    <div class="main-page">
-        <div class="page-content">
+    <body class="default">
+        <div>
             <div>
-                <video class="welcome_vid" controls autoplay loop muted>
-                    <source src="./static/Party_Traveling_Banner.mp4" type="video/mp4">
-                    This browser does not display the video tag.
-                </video>
-                <br>
-                <h4>The Locator Spell</h4>
-                <br>
                 <form action="/events" method="GET">
-                    <input type="text" id="quickSearch" name="query"
-                        placeholder="Quick Cast" />
-                    <button type="submit"  onclick="quickSearch()">Search</button>
+                    <input type="text" class="quickSearch" name="query"
+                        placeholder="Quick Cast - Try searching for &#147;Warhammer&#148;" />
+                    <button type="submit"  onclick="quickSearch()">Locate</button>
                 </form>
-                <br>
-                <h4><a href="{{ url_for('events') }}">Browse All Events</a></h4>
             </div>
-        </div>
+                <div class="eventsButton">
+                    <button onclick="window.location.href='{{ url_for('events') }}';">Browse All Events </button>
+                </div>
+            </div>
+            <div>
+                <p class="copyright"><a class="aboutUs" href="{{ url_for('about') }}"><br><br>About us</a><br><br>Copyright &copy; 2022 Bad Orc Media<br>All Rights Reserved</p>
+            </div>
         <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
-    </div>
+    </body>
 {% endblock %}

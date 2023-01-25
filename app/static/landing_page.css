@@ -1,0 +1,50 @@
+.default {
+    margin: 0px;
+    background-color: antiquewhite;
+}
+
+.welcome_vid {
+    pointer-events: none;
+    display: block;
+    width: 100%;
+}
+
+.quickSearch {
+    display: inline-block;
+    width: 40%;
+    height:5%;
+    margin-left: 30%;
+    border-width: 3px;
+    border-radius: 30px;
+    padding-left: 8px; 
+    padding-right: 8px;
+    border-style: solid;
+    background-color: floralwhite;
+    border-color: lightslategray;
+}
+
+.title_overlay {
+    text-align: center;
+    height: 100px;
+    width: 800px;
+    position: absolute;
+    left: 50%;
+    margin-left: -400px;
+    top: 13%;
+    margin-top: -50px;
+}
+
+h1 {
+    font-size: 80px;
+    color: lightgray;
+    text-shadow: 2px 2px 2px Black;
+}
+
+.eventsButton {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.copyright {
+    text-align: center;
+}
