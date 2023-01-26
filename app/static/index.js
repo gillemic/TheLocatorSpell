@@ -1,7 +1,7 @@
-function quickSearch() {
+function quickSearch(query) {
     let input, filter, events, h, text, others, otherText, show, hits = 0;
-    input = document.getElementById('quickSearch');
-    filter = input.value.toUpperCase();
+    input = query
+    filter = input.toUpperCase();
     events = document.getElementsByClassName('event');
 
     for (const i in events) {

@@ -19,7 +19,9 @@
 {% block navbar %}
   <nav class="header">
     <div class="navbar-top">
-      <img src="{{ url_for('static', filename='TLS_logo.png') }}">
+      <a href="/">
+        <img src="{{ url_for('static', filename='TLS_logo.png') }}">
+      </a>
       <h2>The Locator Spell</h2>
     </div>
     <div class="nav-links">
