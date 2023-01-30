@@ -280,6 +280,10 @@
     margin: rem 0;
 }
 
+.quickSearch {
+    height: 1.6rem;
+}
+
 #main-form {
     padding: 1rem;
     flex: 1 1;
