@@ -30,6 +30,15 @@
                     <br>
                     <br>
 
+                    <label for="type"><u>Event Type</u></label>
+                    <br>
+                    <input type="text" name="type" id="type"
+                        onkeyup="advancedSearch()"
+                        placeholder="Type (DnD, Pokemon, etc.)"
+                        value="{{ request.form['type'] }}"></input>
+                    <br>
+                    <br>
+
                     <label for="category"><u>Category</u></label>
                     <br>
                     <input type="checkbox" id="localCheckbox" onclick="advancedSearch()">
@@ -59,10 +68,11 @@
                 {% for piece in data %}
                     <div class="event">
                         <h2>{{ piece.Name }}</h2>
-                        <br>
                         <small>Location: <b>{{ piece.Location }}</b></small>
                         <br>
-                        <small>Category: <b>{{ piece.Type }}</b></small>
+                        <small>Type: <b>{{ piece.Type if piece.Type else 'Not listed' }}</b></small>
+                        <br>
+                        <small>Category: <b>{{ piece.Event_Cat if piece.Event_Cat else 'Not listed'}}</b></small>
                         <br>
                         <small>Price: <b>{{ piece.Price }}</b></small>
                     </div>

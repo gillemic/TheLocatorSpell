@@ -322,7 +322,7 @@
 
 .event {
     background-color: white;
-    font-size: calc(1rem + 0.75vw);
+    font-size: calc(1rem + 0.5vw);
     text-align: center;
     padding: 1rem;
     margin: 0.5rem;
@@ -336,5 +336,6 @@
 
 .event h2 {
     font-size: calc(1rem + 0.75vw);
+    font-weight: 700;
     text-decoration: underline;
 }

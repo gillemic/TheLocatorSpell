@@ -41,10 +41,11 @@ function quickSearch(query) {
 }
 
 function advancedSearch() {
-    let events, name, location, distance, localCheckbox, minorCheckbox, majorCheckbox, show, h, others, text, hits = 0;
+    let events, name, location, distance, type, localCheckbox, minorCheckbox, majorCheckbox, show, h, others, text, hits = 0;
     name = document.getElementById('activity').value ?? '';
     location = document.getElementById('location').value ?? '';
     distance = document.getElementById('withinRange').value ?? '';
+    type = document.getElementById('type').value ?? '';
     localCheckbox = document.getElementById('localCheckbox').checked ?? false;
     minorCheckbox = document.getElementById('minorCheckbox').checked ?? false;
     majorCheckbox = document.getElementById('majorCheckbox').checked ?? false;
@@ -73,6 +74,13 @@ function advancedSearch() {
                 show = false;
             }
         }
+        
+        if (show && type) {
+            text = others[1].textContent || others[1].innerText;
+            if (!(text.toUpperCase().indexOf(type.toUpperCase()) > -1)) {
+                show = false;
+            }
+        }
 
         // checkboxes
         if (show && (localCheckbox || minorCheckbox || majorCheckbox)) {
@@ -91,7 +99,7 @@ function advancedSearch() {
                 checkboxes.push('Major');
             }
 
-            text = others[1].textContent || others[1].innerText;
+            text = others[2].textContent || others[2].innerText;
             if (!checkboxes.includes(text)) {
                 show = false;
             }
@@ -99,7 +107,7 @@ function advancedSearch() {
 
         // price
         if (show && price) {
-            text = others[2].textContent || others[0].innerText;
+            text = others[3].textContent || others[3].innerText;
             if (price < parseInt(text)) {
                 show = false;
             }
