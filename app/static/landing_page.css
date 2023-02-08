@@ -3,17 +3,25 @@
     background-color: antiquewhite;
 }
 
-.welcome_vid {
+.welcome-vid {
     pointer-events: none;
     display: block;
     width: 100%;
 }
 
+.search-bar {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
 .quickSearch {
     display: inline-block;
-    width: 40%;
-    height:3rem;
-    margin-left: 30%;
+    width: 50%;
+    height: 5rem;
+    margin: 1rem;
     border-width: 3px;
     border-radius: 30px;
     padding-left: 8px; 
@@ -23,19 +31,19 @@
     border-color: lightslategray;
 }
 
-.title_overlay {
+.title-overlay {
     text-align: center;
     height: 100px;
     width: 800px;
     position: absolute;
     left: 50%;
     margin-left: -400px;
-    top: 13%;
+    top: calc(13% - 3vh);
     margin-top: -50px;
 }
 
 h1 {
-    font-size: 80px;
+    font-size: calc(2rem + 2vw);
     color: lightgray;
     text-shadow: 2px 2px 2px Black;
 }
