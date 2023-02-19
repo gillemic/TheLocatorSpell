@@ -13,6 +13,4 @@ db.init_app(app)
 
 bootstrap = Bootstrap(app)
 
-Talisman(app, content_security_policy=None)
-
 from app import routes, errors
