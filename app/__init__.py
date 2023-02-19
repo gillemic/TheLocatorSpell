@@ -13,4 +13,6 @@ app.config.from_object(Config)
 
 bootstrap = Bootstrap(app)
 
+Talisman(app, content_security_policy=None)
+
 from app import routes, errors
