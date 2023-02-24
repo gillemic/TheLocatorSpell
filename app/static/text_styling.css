@@ -1,0 +1,60 @@
+h1 {
+    font-size: 37pt;
+    text-transform: uppercase;
+    color: black;
+    text-shadow: 2px 2px 2px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 2px;
+    font-family: 'Newsreader', serif; 
+}
+
+h2 {
+    font-size: 28pt;
+    color: black;
+    font-weight: 600;
+    line-height: 32px;
+    font-family: 'Akshar', sans-serif;
+    text-transform: capitalize;
+}
+
+h3 {
+    font-size: 21pt;
+    color: black;
+    font-weight: 500;
+    line-height: 24px;
+    font-family: 'Akshar', sans-serif;
+    text-transform: capitalize;
+}
+
+h4 {
+    font-size: 16pt;
+    color: black;
+    font-weight: 500;
+    line-height: 20px;
+    font-family: 'Akshar', sans-serif;
+    text-transform: capitalize;
+}
+
+.body-copy {
+    font-size: 14pt;
+    color: Black;
+    font-weight: 400;
+    line-height: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.call-out {
+    font-size: 14pt;
+    font-weight: 700;
+    line-height: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.legal {
+    font-size: 9pt;
+    color: Black;
+    font-weight: 400;
+    line-height: 12px;
+    font-family: 'Roboto', sans-serif;
+}

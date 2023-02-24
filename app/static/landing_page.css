@@ -42,12 +42,6 @@
     margin-top: -50px;
 }
 
-h1 {
-    font-size: calc(2rem + 2vw);
-    color: lightgray;
-    text-shadow: 2px 2px 2px Black;
-}
-
 .eventsButton {
     margin-top: 10px;
     text-align: center;
