@@ -58,3 +58,29 @@ h4 {
     line-height: 12px;
     font-family: 'Roboto', sans-serif;
 }
+
+
+
+a:link {
+  color: #1EC5F7;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #5C2B69;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #FFD5AD;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #0F6466;
+  background-color: transparent;
+  text-decoration: underline;
+}
