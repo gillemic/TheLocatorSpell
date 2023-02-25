@@ -1,6 +1,6 @@
 .default {
     margin: 0px;
-    background-color: antiquewhite;
+    background-color: white;
 }
 
 .welcome-vid {
@@ -11,6 +11,7 @@
 
 .search-bar {
     display: flex;
+    flex-direction: column;
     margin: auto;
     align-items: center;
     justify-content: center;
@@ -19,16 +20,20 @@
 
 .quickSearch {
     display: inline-block;
-    width: 50%;
+    width: 45%;
     height: 5rem;
     margin: 1rem;
-    border-width: 3px;
-    border-radius: 30px;
+    border-width: 1px;
+    border-radius: 2px;
     padding-left: 8px; 
     padding-right: 8px;
     border-style: solid;
-    background-color: floralwhite;
-    border-color: lightslategray;
+    background-color: white;
+    border-color: Black;
+    
+    font-size: 16pt;
+    line-height: 24px;
+    text-transform: capitalize;
 }
 
 .title-overlay {
@@ -42,9 +47,22 @@
     margin-top: -50px;
 }
 
-.eventsButton {
-    margin-top: 10px;
+.search-button {
+    
+    border-radius: 2px;
     text-align: center;
+    background-color: #1EC5F7;
+    color: white;
+    border-width: 0px;
+    width: 7.5em;
+    height: 2em;
+    
+    
+    font-size: 21pt;
+    font-weight: 600;
+    line-height: 32px;
+    font-family: 'Akshar', sans-serif;
+    text-transform: capitalize;
 }
 
 .copyright {

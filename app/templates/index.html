@@ -8,15 +8,16 @@
                 <form action="/events" method="GET">
                     <div class="search-bar">
                         <input type="text" class="quickSearch" name="query"
-                            placeholder="Quick Cast - Try searching for &#147;Warhammer&#148;" />
-                        <button type="submit">
-                            <img src="{{ url_for('static', filename='crystal_ball_pixel_art_small.png') }}" />
+                            placeholder="Search" />
+                        <br>
+                        <button class="search-button" type="submit">
+                            Search
                         </button>
                     </div>
                 </form>
             </div>
                 <div class="eventsButton">
-                    <button onclick="window.location.href=`{{ url_for('events') }}`">Browse All Events </button>
+                    
                 </div>
             </div>
             <div>
