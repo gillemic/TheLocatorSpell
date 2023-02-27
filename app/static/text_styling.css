@@ -1,5 +1,6 @@
 h1 {
-    font-size: 37pt;
+    /*font-size: 37pt;*/
+    font-size: calc(24px + 2vw);
     text-transform: uppercase;
     color: black;
     text-shadow: 2px 2px 2px;
@@ -36,6 +37,10 @@ h4 {
     text-transform: capitalize;
 }
 
+.title-overlay {
+  font-size: 25vw;
+}
+
 .body-copy {
     font-size: 14pt;
     color: Black;
@@ -58,8 +63,6 @@ h4 {
     line-height: 12px;
     font-family: 'Roboto', sans-serif;
 }
-
-
 
 a:link {
   color: #1EC5F7;

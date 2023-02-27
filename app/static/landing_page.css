@@ -7,7 +7,7 @@
 }
 
 .welcome-vid {
-    margin-top: 12em;
+    /*margin-top: 12em;*/
     pointer-events: none;
     display: block;
     width: 100%;
@@ -24,7 +24,7 @@
 
 .quickSearch {
     display: inline-block;
-    width: 45%;
+    min-width: 55%;
     height: 5rem;
     margin: 1rem;
     margin-top: 2em;
