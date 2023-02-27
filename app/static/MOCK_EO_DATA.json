@@ -1,5 +1,5 @@
 /*
-Filename: First Letter of each word in Organizations name + ID number (Example - Name: Kill Team Cascadia id: 1 = KTC1.json)
+Filename: First Letter of each word in Organizations name + ID number (Example - Name: Kill Team Cascadia, id: 1 = KTC1.json)
 
 id:	INT EO id number
 Name:	String of organizations name
