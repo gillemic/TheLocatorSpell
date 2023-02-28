@@ -1,3 +1,5 @@
+from flask_api import status
+
 """
 Oauth required for any API access points.
 """
@@ -20,8 +22,9 @@ event(
     Price: String of dollar value
 )
 
-account()
+account() #view user data
 """
+
 
 
 """
@@ -42,6 +45,8 @@ event(id=None,
     URL: String of direct URL address
     Description: String of event description
 )
+
+account(...) #Creation of a new account
 """
 
 
@@ -59,3 +64,21 @@ DELETE -
 
 event(id)
 """
+
+@app.route('event', methods=['GET', 'POST'])
+def event(id=None,):
+    if request.method == 'POST':
+        if [__a user is logged in__]:
+            [__Create new event using their email address__]
+            [__populate event data from POST payload__]
+            
+            
+    elif request.method == 'PATCH':
+    else:
+        if [__user email__] not in [__email in list of event contact emails__] 
+            return "User not authorized", status.HTTP_403_FORBIDDEN
+        else
+            if id=None:
+                return "Record not found", status.HTTP_400_BAD_REQUEST
+            else
+                [__Udate event data__]

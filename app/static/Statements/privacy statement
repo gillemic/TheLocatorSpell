@@ -1,0 +1,7 @@
+The Locator Spell is designed to be as low risk to its users as possible. 
+
+To run The Locator Spell, Bad Orc Media requires the collection of some personally identifiable information from event coordinators.
+Starting with Google login (the Oauth 2 system), the only piece of information that we track and is required is the collection of the event organizer's email address to ensure that the events created can only be accessed by the email addresses specified in the creation of an event.
+While creating an event, we require that the event organizer provides their name and contact information for internal Bad Orc Media use only. All additional data that is saved in relation to an event is public data about the event, such as cost, location, organizing group, and an external facing direct link, and email address, or a way for a user to find out more information about the event.
+
+For standard users, Bad Orc Media does collect location data. This data is collected to help curate the best possible event listings for the end user. While Bad Orc Media does store the location data collected, the location data is anonomized and generalized so as to not be associated with any individuals.
