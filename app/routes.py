@@ -2,7 +2,6 @@ import os
 from flask import Flask, render_template, url_for, json, request
 from flask_flatpages import FlatPages
 from app import app
-import tls_api
 
 def smart_truncate(content, length=100, suffix='...'):
     if len(content) <= length:
