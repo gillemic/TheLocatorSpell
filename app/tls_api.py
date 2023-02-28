@@ -27,8 +27,8 @@ account()
 """
 POST - 
 
-event(
-    id: INT of Numerical entry into database
+#If no ID then create a new event. If ID then modify current event.
+event(id=None, 
     Name: String of name of event
     EO: String of Tournament Organizer
     Location: String of physical address
@@ -48,9 +48,9 @@ event(
 """
 PATCH - 
 
-event(id, ...)
+event(id, ...) #everything but ID can be changed
 
-account(...)
+account(...) #everything but ID can be changed
 """
 
 

@@ -31,6 +31,21 @@ def events():
     query = request.args.get('query')
     return render_template('events.html', title='Events', data=data, query=query)
 
+"""
+@app.route('/login')
+def login():
+"""
+
+"""
+@app.route('/signup')
+def signup():
+"""
+
+"""
+@app.route('/blog')
+def blog():
+"""
+
 @app.route('/<path:path>.html')
 def page(path):
 	page = pages.get_or_404(path)
