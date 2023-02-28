@@ -164,3 +164,72 @@ function calcPrice(price) {
         return 'Free';
     }
 }
+
+function eventsClickable() {
+    // Get the modal
+    // var modal = document.getElementById("myModal");
+
+    // // Get the events
+    // var events = document.getElementsByClassName("event");
+
+    // // iterate through and make them clickable and bring up relevant info
+    // for (let i in events) {
+    //     events[i].onclick = function(){
+    //         modal.style.display = "block";
+            
+    //         /*var children = events[i].getElementsByTagName('*');
+    //         var arr =[];
+    //         for (i = 0; i < children.length-1; i++){
+    //             if(children[i].id){
+    //                 arr.push(children[i].getAttribute("id"));
+    //             } else if (children[i].className){
+    //                 arr.push(children[i].getAttribute("class"));
+    //             }
+    //         }
+
+    //         document.getElementById('myModal').innerHTML = arr; */
+    //     } 
+}
+
+function hideModal() {
+
+}
+
+function showModal() {
+
+}
+
+var modal = document.getElementById("myModal");
+
+// Get the events
+var events = document.getElementsByClassName("event");
+
+// iterate through and make them clickable and bring up relevant info
+for (let i in events) {
+    events[i].onclick = function(){
+        modal.style.display = "block";
+        
+        // var children = events[i].children;
+        // var arr =[];
+        // for (i = 0; i < children.length-1; i++){
+        //     if (children[i].innerHTML) {
+        //         arr.push(children[i].innerHTML)
+        //     }
+        // }
+        // arr.join('<br>')
+        document.getElementById('modal-content').innerHTML = events[i].innerHTML; 
+    }
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks on the modal itself, close the modal
+modal.onclick = function() {
+    modal.style.display = "none";
+  }
