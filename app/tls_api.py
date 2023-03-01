@@ -74,16 +74,17 @@ event(id)
 from flask_api import status
 
 #there has got to be a better way to do this than naming off every single argument...
-@app.route('event', methods=['GET', 'POST'])
+@app.route('event', methods=['GET', 'POST', 'PATCH'])
 def event(id=None, Name=None, EO=None, location=None, Type=None, Catagory=None, Start_Date=None, End_Date=None, Charity=None, Promoted=None, Price=None, URL=None, Description=None):
     if request.method == 'POST':
-        if [__a user is logged in__]:
-            [__Create new event using their email address__]
+        if [__EO is logged in__]:
+            [__Create new event__]
             [__populate event data from POST payload__]
-            
-            
+            [__Attach new Event id to EO profile__]
+        else
+            return "User not authorized", status.HTTP_403_FORBIDDEN
+        
     elif request.method == 'PATCH':
-    else:
         if [__user email__] not in [__email in list of event contact emails__] 
             return "User not authorized", status.HTTP_403_FORBIDDEN
         else
@@ -91,8 +92,32 @@ def event(id=None, Name=None, EO=None, location=None, Type=None, Catagory=None, 
                 return "Record not found", status.HTTP_400_BAD_REQUEST
             else
                 [__Udate event data__]
-                
-                
-@app.route('account', methods=['GET', 'POST'])
+        
+    elif request.method == 'GET':
+        if [__Check Oauth__]:
+            [__data = query event database(func args**)__]
+            return [__json(data)__]
+            
+        else:
+            return "User not authorized", status.HTTP_403_FORBIDDEN
+
+    else:
+        return "Unkown request", status.HTTP_400_BAD_REQUEST
+
+
+@app.route('account', methods=['GET', 'PATCH'])
 def account(id=None, Name=None, Public_Contact_Info=None, Private_Contact_Info=None, Website=None, Location=None, Notes=None, Events=None):
-    
+    elif request.method == 'PATCH':
+        if [__EO is logged in__]:
+            [update account details based on fun args]
+        else:
+            return "User not authorized", status.HTTP_403_FORBIDDEN
+        
+    elif request.method == 'GET':
+        if [__check Oauth__]:
+            return [__json(EO account info)__]
+        else:
+            return "User not authorized", status.HTTP_403_FORBIDDEN
+        
+    else:
+        return "Unkown request", status.HTTP_400_BAD_REQUEST
