@@ -7,7 +7,6 @@ Public_Contact_Info:	String of main way for general users to contact EO for ques
 Private_Contact_Info:	String of main way for TLS to contact EO for questions (non-public facing)
 Website:	String of website URL
 Location:	String of physical location address or "N/A"
-Hours:	String of open hours or "N/A"
 Notes:	String of additional notes
 Events:	List of INT event id's.
 */

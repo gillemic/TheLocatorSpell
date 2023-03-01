@@ -1,5 +1,3 @@
-from flask_api import status
-
 """
 Oauth required for any API access points.
 """
@@ -46,7 +44,15 @@ event(id=None,
     Description: String of event description
 )
 
-account(...) #Creation of a new account
+account(id:	INT EO id number
+Name:	String of organizations name
+Public_Contact_Info:	String of main way for general users to contact EO for questions.
+Private_Contact_Info:	String of main way for TLS to contact EO for questions (non-public facing)
+Website:	String of website URL
+Location:	String of physical location address or "N/A"
+Notes:	String of additional notes
+Events:	List of INT event id's.
+) #Creation of a new account
 """
 
 
@@ -65,8 +71,11 @@ DELETE -
 event(id)
 """
 
+from flask_api import status
+
+#there has got to be a better way to do this than naming off every single argument...
 @app.route('event', methods=['GET', 'POST'])
-def event(id=None,):
+def event(id=None, Name=None, EO=None, location=None, Type=None, Catagory=None, Start_Date=None, End_Date=None, Charity=None, Promoted=None, Price=None, URL=None, Description=None):
     if request.method == 'POST':
         if [__a user is logged in__]:
             [__Create new event using their email address__]
@@ -82,3 +91,8 @@ def event(id=None,):
                 return "Record not found", status.HTTP_400_BAD_REQUEST
             else
                 [__Udate event data__]
+                
+                
+@app.route('account', methods=['GET', 'POST'])
+def account(id=None, Name=None, Public_Contact_Info=None, Private_Contact_Info=None, Website=None, Location=None, Notes=None, Events=None):
+    
