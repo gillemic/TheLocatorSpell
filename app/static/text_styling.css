@@ -1,6 +1,6 @@
 h1 {
     /*font-size: 37pt;*/
-    font-size: calc(24px + 2vw);
+    font-size: calc(16px + 2vw);
     text-transform: uppercase;
     color: black;
     text-shadow: 2px 2px 2px;

@@ -362,6 +362,7 @@
     color: black;
     margin: auto;
     display: block;
+    padding: 0.5rem 1rem;
     width: 80%;
     max-width: 700px;
 }
@@ -383,7 +384,7 @@
     top: 15px;
     right: 35px;
     z-index: 1; /* Sit on top */
-    color: #f1f1f1;
+    color: #d30e0e;
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
