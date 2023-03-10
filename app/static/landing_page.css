@@ -10,7 +10,10 @@
     /*margin-top: 12em;*/
     pointer-events: none;
     display: block;
-    width: 100%;
+    width: 800px;
+    min-width: 100vw;
+    height: auto;
+    overflow-x: hidden;
 }
 
 .search-bar {
@@ -27,7 +30,6 @@
     min-width: 55%;
     height: 5rem;
     margin: 1rem;
-    margin-top: 2em;
     border-width: 1px;
     border-radius: 2px;
     padding-left: 8px; 
@@ -65,6 +67,25 @@
     line-height: 32px;
     font-family: 'Akshar', sans-serif;
     text-transform: capitalize;
+}
+
+.blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.blog-post {
+    background-color: #ededed;
+    min-width: auto;
+    max-width: 300px;
+    min-height: auto;
+    max-height: 300px;
+    padding: 2rem 1rem;
+    margin: 1rem 1rem 0 1rem;
+    text-align: center;
 }
 
 .footer {
