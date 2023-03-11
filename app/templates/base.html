@@ -17,6 +17,7 @@
 <meta name="author" content="Michael Gillett">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='text_styling.css') }}">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7152531189033457"
      crossorigin="anonymous"></script>
 {% endblock %}
@@ -24,14 +25,21 @@
 {% block navbar %}
   <nav class="header">
     <div class="navbar-top">
-      <a href="/">
-        <img src="{{ url_for('static', filename='TLS_logo.png') }}">
-      </a>
-      <h2>The Locator Spell</h2>
+      <div class="navbar-image">
+        <a href="/">
+          <img src="{{ url_for('static', filename='TLS_logo.png') }}">
+        </a>
+      </div>
+      <div class="navbar-title">
+        <h2>The Locator Spell</h2>
+      </div>
     </div>
     <div class="nav-links">
+      <a href="{{ url_for('about') }}">About Us</a>
+      <a href="/">Blog</a>
+      <a href="{{ url_for('about') }}">Contact</a>
       <a href="{{ url_for('events') }}">Events</a>
-      <a href="{{ url_for('about') }}">About</a>
+      
     </div>
   </nav>
 {% endblock %}
