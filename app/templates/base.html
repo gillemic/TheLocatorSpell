@@ -35,11 +35,10 @@
       </div>
     </div>
     <div class="nav-links">
-      <a href="{{ url_for('about') }}">About Us</a>
+      <a href="{{ url_for('main.about') }}">About Us</a>
       <a href="/">Blog</a>
-      <a href="{{ url_for('about') }}">Contact</a>
-      <a href="{{ url_for('events') }}">Events</a>
-      
+      <a href="{{ url_for('main.about') }}">Contact</a>
+      <a href="{{ url_for('main.events') }}">Events</a>
     </div>
   </nav>
 {% endblock %}

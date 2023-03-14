@@ -14,3 +14,9 @@ class Event(db.Model):
   price = db.Column(db.Integer, nullable=False) # price of event
   url = db.Column(db.String(100)) # url to website of event if there is one
   description = db.Column(db.String(1000), nullable=False) # event description
+
+class Admin(db.Model):
+  user_id = db.Column(db.Integer, primary_key=True) # user id as primary key
+  name = db.Column(db.String(30), nullable=False) # name of admin user
+  email = db.Column(db.String(30), nullable=False) # email of admin user, for login
+  password = db.Column(db.String(30), nullable=False) # password of admin user

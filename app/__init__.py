@@ -1,18 +1,31 @@
 from flask import Flask
 from config import Config
 from flask_bootstrap import Bootstrap
-# from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 from flask_talisman import Talisman
 
-# db = SQLAlchemy()
+# import SQLAlchemy so we can use it later
+db = SQLAlchemy()
 
-app = Flask(__name__)
-app.config.from_object(Config)
+def create_app():
+    app = Flask(__name__)
+    app.config.from_object(Config)
 
-# db.init_app(app)
+    db.init_app(app)
 
-bootstrap = Bootstrap(app)
+    from .auth import auth as auth_blueprint
+    app.register_blueprint(auth_blueprint)
 
-Talisman(app, content_security_policy=None)
+    from .main import main as main_blueprint
+    app.register_blueprint(main_blueprint)
 
-from app import routes, errors
+    bootstrap = Bootstrap(app)
+
+    from . import models
+
+    Talisman(app, content_security_policy=None)
+
+    with app.app_context():
+        db.create_all()
+
+    return app

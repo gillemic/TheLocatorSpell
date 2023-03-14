@@ -447,3 +447,7 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.box {
+    padding: 1rem;
+}

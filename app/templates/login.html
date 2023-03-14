@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<div class="main-page">
+    <h2>Login</h2>
+    <div class="page-content">    
+        <div class="box">
+            <form method="POST" action="/login">
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-large" type="email" name="email" placeholder="Your Email" autofocus="">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-large" type="password" name="password" placeholder="Your Password">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="checkbox">
+                        <input type="checkbox" name="remember">
+                        Remember me
+                    </label>
+                </div>
+                <button class="button is-block is-info is-large is-fullwidth">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
