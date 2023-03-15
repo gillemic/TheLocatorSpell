@@ -32,23 +32,6 @@ def events():
     query = request.args.get('query')
     return render_template('events.html', title='Events', data=data, query=query)
 
-# @app.route('/')
-# @app.route('/index')
-# def index():
-#     return render_template('index.html')
-
-# @app.route('/about')
-# def about():
-# 	return render_template('about.html', title='About')
-
-# @app.route('/events')
-# def events():
-#     SITE_ROOT = app.root_path
-#     json_url = os.path.join(SITE_ROOT, "static", "NEW_MOCK_DATA.json")
-#     data = json.load(open(json_url))
-#     query = request.args.get('query')
-#     return render_template('events.html', title='Events', data=data, query=query)
-
 """
 @app.route('/login')
 def login():
