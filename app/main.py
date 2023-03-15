@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template, url_for, json, request, Blueprint
 #from flask_flatpages import FlatPages
 from . import db
-from app import app, create_app
+from app import create_app
 
 def smart_truncate(content, length=100, suffix='...'):
     if len(content) <= length:
@@ -27,7 +27,7 @@ def about():
 
 @main.route('/events')
 def events():
-    SITE_ROOT = app.root_path
+    SITE_ROOT = os.getcwd()
     json_url = os.path.join(SITE_ROOT, "static", "NEW_MOCK_DATA.json")
     data = json.load(open(json_url))
     query = request.args.get('query')
