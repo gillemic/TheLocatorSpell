@@ -18,5 +18,5 @@ class Event(db.Model):
 class Admin(db.Model):
   user_id = db.Column(db.Integer, primary_key=True) # user id as primary key
   name = db.Column(db.String(30), nullable=False) # name of admin user
-  email = db.Column(db.String(30), nullable=False) # email of admin user, for login
+  email = db.Column(db.String(30), unique=True, nullable=False) # email of admin user, for login
   password = db.Column(db.String(30), nullable=False) # password of admin user
