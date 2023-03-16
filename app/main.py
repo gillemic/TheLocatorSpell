@@ -1,5 +1,6 @@
 import os
 from flask import Flask, render_template, url_for, json, request, Blueprint, current_app
+from flask_login import login_required
 #from flask_flatpages import FlatPages
 from . import db
 
@@ -31,6 +32,11 @@ def events():
     data = json.load(open(json_url))
     query = request.args.get('query')
     return render_template('events.html', title='Events', data=data, query=query)
+
+@main.route('/add_event')
+@login_required
+def add_event():
+     return render_template('add_event.html')
 
 """
 @app.route('/login')

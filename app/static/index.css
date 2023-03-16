@@ -450,4 +450,14 @@
 
 .box {
     padding: 1rem;
+    justify-content: center;
+}
+
+.field {
+    margin: 0.5rem 0;
+    line-height: 3rem;
+}
+
+.checkbox {
+    margin-left: 2rem;
 }
