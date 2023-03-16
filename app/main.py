@@ -38,6 +38,11 @@ def events():
 def add_event():
      return render_template('add_event.html')
 
+@main.route('/blog')
+def blog():
+     return render_template('blog.html')
+
+
 """
 @app.route('/login')
 def login():
