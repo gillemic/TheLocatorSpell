@@ -1,15 +1,18 @@
+/* page titles and headers */
 h1 {
     /*font-size: 37pt;*/
-    font-size: calc(16px + 2vw);
+    font-size: calc(16px + 1.5vw);
     text-transform: uppercase;
     color: black;
-    text-shadow: 2px 2px 2px;
     font-weight: 700;
     line-height: 48px;
     letter-spacing: 2px;
     font-family: 'Newsreader', serif; 
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
+/* topic and paragraph headers */
 h2 {
     font-size: 28pt;
     color: black;
@@ -19,6 +22,7 @@ h2 {
     text-transform: capitalize;
 }
 
+/* Sub header */
 h3 {
     font-size: 21pt;
     color: black;
@@ -28,6 +32,7 @@ h3 {
     text-transform: capitalize;
 }
 
+/* Sub-sub header */
 h4 {
     font-size: 16pt;
     color: black;
@@ -41,6 +46,7 @@ h4 {
   font-size: 25vw;
 }
 
+/* Main body text */
 .body-copy {
     font-size: 14pt;
     color: Black;
@@ -49,6 +55,7 @@ h4 {
     font-family: 'Roboto', sans-serif;
 }
 
+/* emphasized body text */
 .call-out {
     font-size: 14pt;
     font-weight: 700;
@@ -65,7 +72,7 @@ h4 {
 }
 
 a:link {
-  color: #1EC5F7;
+  color: #1690a8;
   background-color: transparent;
   text-decoration: none;
 }
@@ -86,4 +93,8 @@ a:active {
   color: #0F6466;
   background-color: transparent;
   text-decoration: underline;
+}
+
+p {
+    margin-left: 0;
 }
