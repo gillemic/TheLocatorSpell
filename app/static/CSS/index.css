@@ -285,7 +285,6 @@
 }
 
 .form-wrapper {
-    border: 1px solid black;
     border-radius: 1rem;
     display: block;
     flex: 1 1;
@@ -337,11 +336,13 @@
 }
 
 #pageData {
+    max-width: 80%;
     display: flex;
     flex: 8 8 25%;
     flex-wrap: wrap;
     justify-content: center;
     padding: 0 1rem;
+    margin: auto;
 }
 
 #no-results {
@@ -349,23 +350,30 @@
 }
 
 .event {
-    background-color: white;
+    background-color: #fff6ee;
     font-size: calc(1rem + 0.5vw);
     text-align: center;
+    font-weight: 400;
+    line-height: 20px;
+    font-family: 'Roboto', sans-serif;
     padding: 1rem;
     margin: 0.5rem;
-    flex: 1 1 24%;
-    max-width: 24%;
+    flex: 1 1 15%;
+    max-width: 15%;
     min-width: 200px;
-    white-space: nowrap;
-    box-shadow: 0.5rem 0.5rem 0.5rem rgb(43, 43, 43);
-    border-radius: 1rem;
+    box-shadow:  0 6px 4px -4px rgba(0,0,0,0.7);
+    border-radius: 1em;
+    border: 2px solid;
+    border-color: #f7d1ad;
+    color: Black;
+
 }
 
 .event h2 {
     font-size: calc(1rem + 0.75vw);
     font-weight: 700;
-    text-decoration: underline;
+    margin-top: 0px;
+    color: #5C2B69;
 }
 
 /* The Modal (background) */
@@ -437,3 +445,4 @@
 .checkbox {
     margin-left: 2rem;
 }
+

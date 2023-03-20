@@ -68,13 +68,13 @@
                 {% for piece in data %}
                     <div class="event">
                         <h2>{{ piece.Name }}</h2>
-                        <small>Location: <b>{{ piece.Location }}</b></small>
-                        <br>
-                        <small>Type: <b>{{ piece.Type if piece.Type else 'Not listed' }}</b></small>
-                        <br>
-                        <small>Category: <b>{{ piece.Event_Cat if piece.Event_Cat else 'Not listed'}}</b></small>
-                        <br>
-                        <small>Price: {{ '$' if piece.Price }}<b>{{ piece.Price if piece.Price else 'Free' }}</b></small>
+                        <div class="body-text">{{ piece.Location }}</div>
+                        
+                        <div class="call-out">{{ piece.Type if piece.Type}}</div>
+                        
+                        <div>{{ piece.Event_Cat if piece.Event_Cat }}</div>
+                        
+                        <div>{{ '$' if piece.Price }}{{ piece.Price if piece.Price }}</div>
                     </div>
                 {% endfor %}
                 <div id="no-results">No results found</div>
@@ -100,5 +100,6 @@
                 quickSearch(query);
             </script>
         {% endif %}
+
     </div>
 {% endblock %}
