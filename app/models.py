@@ -2,7 +2,7 @@ from flask_login import UserMixin
 from . import db
 
 class Event(db.Model):
-  event_id = db.Column(db.Integer, primary_key=True) # primary keys are required by SQLAlchemy
+  id = db.Column(db.Integer, primary_key=True) # primary keys are required by SQLAlchemy
   name = db.Column(db.String(100), nullable=False) # string name of event
   tournament_organizer = db.Column(db.String(100), nullable=False) # string name of tournament organizer
   location = db.Column(db.String(100), nullable=False) # string of physical address
