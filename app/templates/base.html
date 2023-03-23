@@ -58,4 +58,12 @@
       {# application content needs to be provided in the app_content block #}
     {% block app_content %}{% endblock %}
   </div>
-{% endblock %}
+    <div class="footer">
+        <p class="call-out">
+            <a class="about-us-link" href="{{ url_for('main.about') }}">About Us</a> | 
+            <a class="blog-link" href="{{ url_for('main.about') }}">Blog</a> | 
+            <a class="events-link" href="{{ url_for('main.events') }}">Events</a>
+        </p>
+        <p class="legal">Copyright &copy; 2022 Bad Orc Media<br>All Rights Reserved</p>
+    </div>
+{%- endblock content %}

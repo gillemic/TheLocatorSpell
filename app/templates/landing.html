@@ -24,20 +24,19 @@
 {% endblock %}
 
 {% block navbar %}
-<div class="title-overlay">
-    <h1>
-        The Locator Spell
-    </h1>
-</div>
-<video tabindex="-1" class="welcome-vid" controls autoplay loop muted>
-    <source src="static/Party_Traveling_Banner.webm" type="video/webm">
-</video>
-<br>
-
+    <div class="title-overlay">
+        <h1>
+            The Locator Spell
+        </h1>
+    </div>
+    <video tabindex="-1" class="welcome-vid" controls autoplay loop muted>
+        <source src="static/Party_Traveling_Banner.webm" type="video/webm">
+    </video>
+    <br>
 {% endblock %}
 
 {% block content %}
-  <div class="container">
+    <div class="container">
     {% with messages = get_flashed_messages() %}
       {% if messages %}
         {% for message in messages %}
@@ -45,8 +44,15 @@
         {% endfor %}
       {% endif %}
       {% endwith %}
-
       {# application content needs to be provided in the app_content block #}
     {% block app_content %}{% endblock %}
-  </div>
+    </div>
+    <div class="footer">
+        <p class="call-out">
+            <a class="about-us-link" href="{{ url_for('main.about') }}">About Us</a> | 
+            <a class="blog-link" href="{{ url_for('main.about') }}">Blog</a> | 
+            <a class="events-link" href="{{ url_for('main.events') }}">Events</a>
+        </p>
+        <p class="legal">Copyright &copy; 2022 Bad Orc Media<br>All Rights Reserved</p>
+    </div>
 {% endblock %}

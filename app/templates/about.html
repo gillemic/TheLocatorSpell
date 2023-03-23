@@ -1,17 +1,18 @@
 {% extends "base.html" %}
 
 {% block app_content %}
+<body class="default">
     <div class="main-page">
         <div class="page-content about">
-            <h1>About</h1>
+            <h1>About Us</h1>
             <p>
                 The Locator Spell is designed to be a gaming event finding tool designed for players, that also provides event coordinators a zero dollar sollution to broadcast their events. For small businesses like your mom and pop gaming stores or local gaming communities with zero budget, this is massive. Even large organizations that do wonderful work in putting together those massive tournaments and conventions we love have to heavily weight the cost of advertising and public outreach. Our team's hope is that we can help do some of the lifting for those that really want to get people out there and game.
-            </p>
-            <p>
+                <br>
+                <br>
                 So without further ado, let us help you locate your next gaming event.
             </p>
             <p>
-                    <a href="https://ko-fi.com/thelocatorspell" style="display: block; margin-left: auto; margin-right: auto;"><img class= "image-60" src="{{ url_for('static', filename='BuyMeACoffee_dark2x.png') }}" style="width:25%; flex-shrink: 1;"> </a>
+                    <a href="https://ko-fi.com/thelocatorspell" style="text-align: center; display: block; margin-left: auto; margin-right: auto;"><img class= "image-60" src="{{ url_for('static', filename='BuyMeACoffee_dark2x.png') }}" style="width:25%; flex-shrink: 1;"> </a>
                 <br>
                 Make sure to not miss out on our Ko-fi page! The Locator Spell team will be posting extra content like deep dives into events and fun articles about gaming groups. For those of you already subscribed, this project wouldn't be possible without your support!
             </p>
@@ -20,4 +21,5 @@
             </p>
         </div>
     </div>
+</body>
 {% endblock %}

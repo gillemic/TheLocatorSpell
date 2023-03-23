@@ -173,16 +173,25 @@
 
 /* General */
 
+.default {
+    margin: 0px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .container {
     background-size: cover;
     width: 100%;
-    min-height: 100vh;
+    min-height: calc(100vh - 188.5px - 54px - 5rem);
 }
 
 .header {
     width: 100%;
     background-color: var(--second-color);
     display: block;
+    margin-bottom: 2rem;
 }
 
 .navbar-top {
@@ -265,6 +274,7 @@
     flex-wrap: wrap;
     align-items: flex-start;
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .page-content h4 {
@@ -290,14 +300,16 @@
 
 .form-wrapper {
     border-radius: 1rem;
-    display: block;
+    display: flex;
     flex: 1 1;
     align-items: stretch;
     margin-bottom: 1rem;
+    max-width: 10%;
 }
 
 .form-wrapper a {
     margin: 0.5rem 0;
+    width: ;
 }
 
 .form-wrapper a:hover {
@@ -307,7 +319,7 @@
 .showhide-wrapper {
     display: flex;
     justify-content: center;
-    margin: rem 0;
+    flex-wrap: wrap;
 }
 
 .quickSearch {
@@ -370,7 +382,6 @@
     border: 2px solid;
     border-color: #f7d1ad;
     color: Black;
-
 }
 
 .event h2 {
@@ -450,3 +461,9 @@
     margin-left: 2rem;
 }
 
+.footer {
+    margin-top: auto;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}
