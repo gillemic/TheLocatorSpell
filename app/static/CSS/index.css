@@ -356,7 +356,7 @@
     display: flex;
     flex: 8 8 25%;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     padding: 0 1rem;
     margin: auto;
 }
@@ -373,10 +373,11 @@
     line-height: 20px;
     font-family: 'Roboto', sans-serif;
     padding: 1rem;
-    margin: 0.5rem;
+    margin: 1rem;
     flex: 1 1 15%;
     max-width: 15%;
     min-width: 200px;
+    min-height: 200px;
     box-shadow:  0 6px 4px -4px rgba(0,0,0,0.7);
     border-radius: 1em;
     border: 2px solid;
@@ -389,6 +390,13 @@
     font-weight: 700;
     margin-top: 0px;
     color: #5C2B69;
+}
+.sponsor-text {
+    
+}
+
+.event-subtext {
+    
 }
 
 /* The Modal (background) */
