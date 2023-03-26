@@ -21,3 +21,9 @@ class Admin(UserMixin, db.Model):
   name = db.Column(db.String(100), nullable=False) # name of admin user
   email = db.Column(db.String(100), unique=True, nullable=False) # email of admin user, for login
   password = db.Column(db.String(100), nullable=False) # password of admin user
+  
+class User(UserMixin, db.Model):
+  id = db.Column(db.Integer, primary_key=True) # user id as primary key
+  name = db.Column(db.String(100), nullable=False) # name of admin user
+  email = db.Column(db.String(100), unique=True, nullable=False) # email of admin user, for login
+  password = db.Column(db.String(100), nullable=False) # password of admin user
