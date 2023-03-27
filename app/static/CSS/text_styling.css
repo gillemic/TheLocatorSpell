@@ -1,7 +1,7 @@
 /* page titles and headers */
 h1 {
     /*font-size: 37pt;*/
-    font-size: calc(16px + 1.5vw);
+    font-size: calc(2vw + 16px);
     text-transform: uppercase;
     color: black;
     font-weight: 700;

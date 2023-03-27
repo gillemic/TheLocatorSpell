@@ -27,7 +27,7 @@
 
 .quickSearch {
     display: inline-block;
-    min-width: 55%;
+    min-width: 45%;
     height: 5rem;
     margin: 1rem;
     border-width: 1px;
@@ -37,7 +37,6 @@
     border-style: solid;
     background-color: white;
     border-color: Black;
-    
     font-size: 16pt;
     line-height: 24px;
     text-transform: capitalize;
@@ -51,7 +50,7 @@
     /*position: absolute;*/
     top: calc(13% - 3vh);
     margin: auto;
-    margin-top: 5rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
@@ -85,17 +84,16 @@
     min-height: auto;
     max-height: 300px;
     padding: 2rem 1rem;
-    margin-top: 3em;
-    margin-left: 1em;
-    margin-right: 1em;
+    margin: 2rem 1rem;
     text-align: center;
     border: 2px solid #1EC5F7;
     border-radius: 2px;
 }
 
 .footer {
-    margin-top: 1rem;
+    margin-top: auto;
     text-align: center;
     width: 100%;
     bottom: 0;
+    position: relative;
 }

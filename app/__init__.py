@@ -1,3 +1,7 @@
+import mimetypes
+mimetypes.add_type('application/javascript', '.js')
+mimetypes.add_type('text/css', '.css')
+
 from flask import Flask
 from config import Config
 from flask_bootstrap import Bootstrap
