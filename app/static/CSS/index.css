@@ -383,6 +383,7 @@
     padding: 1rem;
     margin: 1rem;
     flex: 1 1 15%;
+    max-width: 15%;
     min-width: 200px;
     min-height: 200px;
     box-shadow:  0 6px 4px -4px rgba(0,0,0,0.7);
