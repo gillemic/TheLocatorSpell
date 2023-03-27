@@ -3,31 +3,29 @@
 {% block app_content %}
     <!-- Landing page body content -->
     <body class="default">
-        <div>
-            <div>
-                <form action="/events" method="GET">
-                    <div class="search-bar">
-                        <input type="text" class="quickSearch" name="query"
-                            placeholder="Quick Cast" />
-                        <button class="search-button" type="submit">
-                            Search
-                        </button>
-                    </div>
-                </form>
-            </div>
-                <div class="blog-posts">
-                    <div class="blog-post">
-                        <h4>Blog Title 1 That Can Go On Two Lines</h4>
-                        <p>Example text composed of part of the blog post</p>
-                        <small>03/07/2023</small>
-                    </div>
-                    <div class="blog-post">
-                        <h4>Blog Title 2 That Can Go On Two Lines</h4>
-                        <p>Example text composed of part of the blog post</p>
-                        <small>03/08/2023</small>
-                    </div>
+        <div class="below-header">
+            <form action="/events" method="GET">
+                <div class="search-bar">
+                    <input type="text" class="quickSearch" name="query"
+                        placeholder="Quick Cast" />
+                    <button class="search-button" type="submit">
+                        Search
+                    </button>
+                </div>
+            </form>
+            <div class="blog-posts">
+                <div class="blog-post">
+                    <h4>Blog Title 1 That Can Go On Two Lines</h4>
+                    <p>Example text composed of part of the blog post</p>
+                    <small>03/07/2023</small>
+                </div>
+                <div class="blog-post">
+                    <h4>Blog Title 2 That Can Go On Two Lines</h4>
+                    <p>Example text composed of part of the blog post</p>
+                    <small>03/08/2023</small>
                 </div>
             </div>
-        <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+        </div>
+        <script type="application/javascript" src="{{ url_for('static', filename='JS/events_page.min.js') }}"></script>
     </body>
 {% endblock %}
