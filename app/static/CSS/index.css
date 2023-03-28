@@ -298,9 +298,15 @@
     padding: 2rem;
 }
 
+.form-horizontal {
+    display: block;
+    padding: 0 0.5rem;
+    justify-content: center;
+}
+
 .form-wrapper {
     border-radius: 1rem;
-    display: flex;
+    display: block;
     flex: 1 1;
     align-items: stretch;
     margin-bottom: 1rem;
@@ -321,13 +327,14 @@
 }
 
 .showhide-wrapper {
-    display: flex;
+    display: block;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .spell-components {
-    margin: 0rem 1rem;
+    margin: 1rem auto;
+    width: auto;
 }
 
 .quickSearch {
@@ -364,9 +371,21 @@
     display: flex;
     flex: 2 2 25%;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: center;
     padding: 0 1rem;
-    margin: auto;
+    margin: 1rem auto;
+}
+
+#ad-space-right {
+    justify-content: center;
+    margin:  1rem auto;
+    min-width: 15%;
+    width: fit-content;
+    max-width: 70%;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    height: 50vh;
+    border: 1px solid black;
 }
 
 #no-results {
@@ -383,7 +402,7 @@
     padding: 1rem;
     margin: 1rem;
     flex: 1 1 15%;
-    max-width: 15%;
+    max-width: 20%;
     min-width: 200px;
     min-height: 200px;
     box-shadow:  0 6px 4px -4px rgba(0,0,0,0.7);
@@ -399,6 +418,25 @@
     margin-top: 0px;
     color: #5C2B69;
 }
+
+.event-search {
+    display:flex;
+    justify-content: center;
+    width: 100%;
+    margin: 1rem 8rem;
+    align-items: center;
+}
+
+.event-search input {
+    margin: 0.5rem;
+    min-width: 33%;
+}
+
+.event-search button {
+    margin: 0.5rem;
+    align-self: center;
+}
+
 .sponsor-text {
     
 }

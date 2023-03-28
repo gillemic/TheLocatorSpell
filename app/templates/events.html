@@ -3,215 +3,224 @@
 {% block app_content %}
     <div class="main-page">
         <div class="page-content">
-            <div class="form-horizontal spell-components">
-                <form name="main-form" id="main-form">
-                <!--    <h2>Spell Components</h2>
-                    <label for="activity"><u>Activity</u></label>
-                    <br>
-                    <input type="text" name="activity" id="activity"
-                        onkeyup="advancedSearch()"
-                        placeholder="Activity Name"
-                        value="{{ request.form['activity'] }}"></input>
-                    <br>
-                    <br>
+          <div class="form-horizontal spell-components">
+              <form name="main-form" id="main-form">
+              <!--    <h2>Spell Components</h2>
+                  <label for="activity"><u>Activity</u></label>
+                  <br>
+                  <input type="text" name="activity" id="activity"
+                      onkeyup="advancedSearch()"
+                      placeholder="Activity Name"
+                      value="{{ request.form['activity'] }}"></input>
+                  <br>
+                  <br>
 
-                    <label for="location"><u>Location</u></label>
-                    <br>
-                    <input type="text" name="location" id="location"
-                        onkeyup="advancedSearch()"
-                        placeholder="Location Name"
-                        value="{{ request.form['location'] }}"></input>
-                    <br>
-                    <label for="range">within</label>
-                    <br>
-                    <input type="range" min="1" max="100" value="100" class="slider" name="withinRange" id="withinRange" oninput="this.nextElementSibling.value = this.value">
-                    <output>100</output>
-                    <label for="miles">miles</label>
-                    <br>
-                    <br>
+                  <label for="location"><u>Location</u></label>
+                  <br>
+                  <input type="text" name="location" id="location"
+                      onkeyup="advancedSearch()"
+                      placeholder="Location Name"
+                      value="{{ request.form['location'] }}"></input>
+                  <br>
+                  <label for="range">within</label>
+                  <br>
+                  <input type="range" min="1" max="100" value="100" class="slider" name="withinRange" id="withinRange" oninput="this.nextElementSibling.value = this.value">
+                  <output>100</output>
+                  <label for="miles">miles</label>
+                  <br>
+                  <br>
 
-                    <label for="type"><u>Event Type</u></label>
-                    <br>
-                    <input type="text" name="type" id="type"
-                        onkeyup="advancedSearch()"
-                        placeholder="Type (DnD, Pokemon, etc.)"
-                        value="{{ request.form['type'] }}"></input>
-                    <br>
-                    <br>
+                  <label for="type"><u>Event Type</u></label>
+                  <br>
+                  <input type="text" name="type" id="type"
+                      onkeyup="advancedSearch()"
+                      placeholder="Type (DnD, Pokemon, etc.)"
+                      value="{{ request.form['type'] }}"></input>
+                  <br>
+                  <br>
 
-                    <label for="category"><u>Category</u></label>
-                    <br>
-                    <input type="checkbox" id="localCheckbox" onclick="advancedSearch()">
-                    <label for="category">Local</label>
-                    <input type="checkbox" id="minorCheckbox" onclick="advancedSearch()">
-                    <label for="category">Minor</label>
-                    <input type="checkbox" id="majorCheckbox" onclick="advancedSearch()">
-                    <label for="category">Major</label>
-                    <br>
-                    <br>
+                  <label for="category"><u>Category</u></label>
+                  <br>
+                  <input type="checkbox" id="localCheckbox" onclick="advancedSearch()">
+                  <label for="category">Local</label>
+                  <input type="checkbox" id="minorCheckbox" onclick="advancedSearch()">
+                  <label for="category">Minor</label>
+                  <input type="checkbox" id="majorCheckbox" onclick="advancedSearch()">
+                  <label for="category">Major</label>
+                  <br>
+                  <br>
 
-                    <label for="range"><u>Price</u></label>
-                    <br>
-                    <input type="range" min="0" max="100" value="100" class="slider" id="price" oninput="this.nextElementSibling.value = this.value" onclick="advancedSearch()">
-                    <output>100</output><p>dollars</p>
-                    <br>
+                  <label for="range"><u>Price</u></label>
+                  <br>
+                  <input type="range" min="0" max="100" value="100" class="slider" id="price" oninput="this.nextElementSibling.value = this.value" onclick="advancedSearch()">
+                  <output>100</output><p>dollars</p>
+                  <br>
 
-                    <button type="reset" onclick="clearFields()">Reset</button>
+                  <button type="reset" onclick="clearFields()">Reset</button>
+                  <br>
+              </form>
+              <div class="showhide-wrapper">
+                  <a id="hide-button" onclick="hideSearch()">Hide</a>
+                  <a id="show-button" onclick="showSearch()">Show</a>
+              </div> -->
+                  <fieldset>
+                  
+                  <!-- Form Name -->
+                  <legend>Spell Components</legend>
+                  
+                  <!-- Multiple Checkboxes -->
+                  <div class="form-group">
+                    <label class="activity-header" for="activities">Activity</label>
                     <br>
-                </form>
-                <div class="showhide-wrapper">
-                    <a id="hide-button" onclick="hideSearch()">Hide</a>
-                    <a id="show-button" onclick="showSearch()">Show</a>
-                </div> -->
-                    <fieldset>
-                    
-                    <!-- Form Name -->
-                    <legend>Spell Components</legend>
-                    
-                    <!-- Multiple Checkboxes -->
-                    <div class="form-group">
-                      <label class="activity-header" for="activities">Activity</label>
-                      <br>
-                      <div id="activities">
-                        <div class="checkbox">
-                            <label for="activities-0">
-                            <input type="checkbox" name="activities" id="activities-0" value="1">
-                            Magic The Gathering
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label for="activities-1">
-                            <input type="checkbox" name="activities" id="activities-1" value="2">
-                            Pokemon
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label for="activities-2">
-                            <input type="checkbox" name="activities" id="activities-2" value="3">
-                            Yu-Gi-Oh
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label for="activities-3">
-                            <input type="checkbox" name="activities" id="activities-3" value="4">
-                            DnD
-                            </label>
-                        </div>
+                    <div id="activities">
+                      <div class="checkbox">
+                          <label for="activities-0">
+                          <input type="checkbox" name="activities" id="activities-0" value="1">
+                          Magic The Gathering
+                          </label>
+                      </div>
+                      <div class="checkbox">
+                          <label for="activities-1">
+                          <input type="checkbox" name="activities" id="activities-1" value="2">
+                          Pokemon
+                          </label>
+                      </div>
+                      <div class="checkbox">
+                          <label for="activities-2">
+                          <input type="checkbox" name="activities" id="activities-2" value="3">
+                          Yu-Gi-Oh
+                          </label>
+                      </div>
+                      <div class="checkbox">
+                          <label for="activities-3">
+                          <input type="checkbox" name="activities" id="activities-3" value="4">
+                          DnD
+                          </label>
                       </div>
                     </div>
-                    
-                    <!-- Select Basic -->
-                    <div class="form-group">
-                      <label class="" for="Location">Location</label>
-                      <div class="">
-                        <select id="Location" name="Location" class="form-control">
-                          <option value="1">Portland, OR</option>
-                          <option value="2">Seattle, WA</option>
-                        </select>
+                  </div>
+                  
+                  <!-- Select Basic -->
+                  <div class="form-group">
+                    <label class="" for="Location">Location</label>
+                    <div class="">
+                      <select id="Location" name="Location" class="form-control">
+                        <option value="1">Portland, OR</option>
+                        <option value="2">Seattle, WA</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <!-- Multiple Radios -->
+                  <div class="form-group">
+                    <label class="" for="price">Price</label>
+                    <br>
+                    <div id="event-price">
+                      <div class="radio">
+                          <label for="price-0">
+                          <input type="radio" name="price" id="price-0" value="0" checked="checked">
+                          Free
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label for="price-1">
+                          <input type="radio" name="price" id="price-1" value="5">
+                          $5+
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label for="price-2">
+                          <input type="radio" name="price" id="price-2" value="10">
+                          $10+
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label for="price-3">
+                          <input type="radio" name="price" id="price-3" value="20">
+                          $20+
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label for="price-4">
+                          <input type="radio" name="price" id="price-4" value="50">
+                          $50+
+                          </label>
                       </div>
                     </div>
-                    
-                    <!-- Multiple Radios -->
-                    <div class="form-group">
-                      <label class="" for="price">Price</label>
-                      <br>
-                      <div id="event-price">
-                        <div class="radio">
-                            <label for="price-0">
-                            <input type="radio" name="price" id="price-0" value="0" checked="checked">
-                            Free
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label for="price-1">
-                            <input type="radio" name="price" id="price-1" value="5">
-                            $5+
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label for="price-2">
-                            <input type="radio" name="price" id="price-2" value="10">
-                            $10+
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label for="price-3">
-                            <input type="radio" name="price" id="price-3" value="20">
-                            $20+
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label for="price-4">
-                            <input type="radio" name="price" id="price-4" value="50">
-                            $50+
-                            </label>
-                        </div>
+                  </div>
+                  
+                  <!-- Multiple Checkboxes -->
+                  <div class="form-group">
+                    <label class="" for="category">Category</label>
+                    <br>
+                    <div class="">
+                    <div class="checkbox">
+                      <label for="category-0">
+                        <input type="checkbox" name="category" id="category-0" value="local">
+                        Local
+                      </label>
+                      </div>
+                    <div class="checkbox">
+                      <label for="category-1">
+                        <input type="checkbox" name="category" id="category-1" value="minor">
+                        Regional
+                      </label>
+                      </div>
+                    <div class="checkbox">
+                      <label for="category-2">
+                        <input type="checkbox" name="category" id="category-2" value="major">
+                        Major
+                      </label>
+                      </div>
+                    <div class="checkbox">
+                      <label for="category-3">
+                        <input type="checkbox" name="category" id="category-3" value="major">
+                        Convention
+                      </label>
                       </div>
                     </div>
-                    
-                    <!-- Multiple Checkboxes -->
-                    <div class="form-group">
-                      <label class="" for="category">Category</label>
-                      <br>
-                      <div class="">
-                      <div class="checkbox">
-                        <label for="category-0">
-                          <input type="checkbox" name="category" id="category-0" value="local">
-                          Local
-                        </label>
-                        </div>
-                      <div class="checkbox">
-                        <label for="category-1">
-                          <input type="checkbox" name="category" id="category-1" value="minor">
-                          Regional
-                        </label>
-                        </div>
-                      <div class="checkbox">
-                        <label for="category-2">
-                          <input type="checkbox" name="category" id="category-2" value="major">
-                          Major
-                        </label>
-                        </div>
-                      <div class="checkbox">
-                        <label for="category-3">
-                          <input type="checkbox" name="category" id="category-3" value="major">
-                          Convention
-                        </label>
-                        </div>
-                      </div>
-                    </div>
-                    </fieldset>
-                </form>
-                <div class="showhide-wrapper">
-                    <a id="hide-button" onclick="hideSearch()">Hide</a>
-                    <a id="show-button" onclick="showSearch()">Show</a>
-                </div>
+                  </div>
+                  </fieldset>
+              </form>
+              <div class="showhide-wrapper">
+                  <a id="hide-button" onclick="hideSearch()">Hide Advanced Search</a>
+                  <a id="show-button" onclick="showSearch()">Show Advanced Search</a>
+              </div>
+          </div>
+          <div id="pageData">
+            <div>
+              {% if (query != '') %}
+              <p>Showing results for: "{{ query }}"</p>
+              {% endif %}
             </div>
-            <div id="pageData">
-                {% for piece in data %}
-                    <div class="event">
-                        <h2>{{ piece.Name }}</h2>
-                        <div class="body-text">{{ piece.Location }}</div>
-                        
-                        <div class="call-out">{{ piece.Type if piece.Type}}</div>
-                        
-                        <div>{{ piece.Event_Cat if piece.Event_Cat }}</div>
-                        
-                        <div>{{ '$' if piece.Price }}{{ piece.Price if piece.Price }}</div>
-                    </div>
-                {% endfor %}
-                <div id="no-results">No results found</div>
+            <div class="event-search">
+              <input type="text" id="event-search" placeholder="Quick Cast" onkeyup="quickSearch(this.value); console.log(this.value);"/>
             </div>
-            <div id="myModal" class="modal" onclick="hideModal()">
-	
-				<!-- The Close Button -->
-				<span class="close" onclick="hideModal()">&times;</span>
-			
-				<!-- Modal Content (Event Info) -->
-				<div id="modal-content">
-
-                </div>
-			</div>
+            <br>
+            {% for piece in data %}
+            <div class="event">
+                <h2>{{ piece.Name }}</h2>
+                <div class="body-text">{{ piece.Location }}</div>
+                
+                <div class="call-out">{{ piece.Type if piece.Type}}</div>
+                
+                <div>{{ piece.Event_Cat if piece.Event_Cat }}</div>
+                
+                <div>{{ '$' if piece.Price }}{{ piece.Price if piece.Price }}</div>
+            </div>
+            {% endfor %}
+            <div id="no-results">No results found</div>
+          </div>
+          <div id="ad-space-right">
+            <p>Google ad space</p>
+          </div>
+          <div id="myModal" class="modal" onclick="hideModal()">
+            <!-- The Close Button -->
+            <span class="close" onclick="hideModal()">&times;</span>
+            <!-- Modal Content (Event Info) -->
+            <div id="modal-content">
+            </div>
+          </div>
         </div>
         <script type="application/javascript" src="{{ url_for('static', filename='JS/events_page.min.js') }}"></script>
         <script>
@@ -226,6 +235,5 @@
             quickSearch(query);
         </script>
         {% endif %}
-
     </div>
 {% endblock %}
