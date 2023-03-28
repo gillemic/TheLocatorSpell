@@ -27,3 +27,9 @@ class User(UserMixin, db.Model):
   name = db.Column(db.String(100), nullable=False) # name of admin user
   email = db.Column(db.String(100), unique=True, nullable=False) # email of admin user, for login
   password = db.Column(db.String(100), nullable=False) # password of admin user
+
+class Post(db.Model):
+  id = db.Column(db.Integer, primary_key=True) # blog post id as primary key
+  title = db.Column(db.String(100), nullable=False) # title of blog post
+  body = db.Column(db.String(5000), nullable=False) # title of blog post
+  date_posted = db.Column(db.Date, nullable=False) # start date of event

@@ -75,25 +75,25 @@
                     <div id="activities">
                       <div class="checkbox">
                           <label for="activities-0">
-                          <input type="checkbox" name="activities" id="activities-0" value="1">
+                          <input type="checkbox" name="activities" id="activities-0" value="Magic The Gathering">
                           Magic The Gathering
                           </label>
                       </div>
                       <div class="checkbox">
                           <label for="activities-1">
-                          <input type="checkbox" name="activities" id="activities-1" value="2">
+                          <input type="checkbox" name="activities" id="activities-1" value="Pokemon">
                           Pokemon
                           </label>
                       </div>
                       <div class="checkbox">
                           <label for="activities-2">
-                          <input type="checkbox" name="activities" id="activities-2" value="3">
+                          <input type="checkbox" name="activities" id="activities-2" value="Yu-Gi-Oh">
                           Yu-Gi-Oh
                           </label>
                       </div>
                       <div class="checkbox">
                           <label for="activities-3">
-                          <input type="checkbox" name="activities" id="activities-3" value="4">
+                          <input type="checkbox" name="activities" id="activities-3" value="DnD">
                           DnD
                           </label>
                       </div>
@@ -189,7 +189,7 @@
           </div>
           <div id="pageData">
             <div>
-              {% if (query != '') %}
+              {% if query and (query != '') %}
               <p>Showing results for: "{{ query }}"</p>
               {% endif %}
             </div>

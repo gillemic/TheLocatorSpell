@@ -438,11 +438,11 @@
 }
 
 .sponsor-text {
-    
+    font-weight: bold;
 }
 
 .event-subtext {
-    
+    font-style: italic;
 }
 
 /* The Modal (background) */
@@ -504,6 +504,10 @@
 .box {
     padding: 1rem;
     justify-content: center;
+}
+
+.added-events {
+    display: flex;
 }
 
 .field {

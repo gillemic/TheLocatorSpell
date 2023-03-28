@@ -5,7 +5,7 @@
     <h2>Add Event</h2>
     <div class="page-content">
         <div class="box">
-            <form method="POST" onsubmit="return false;">
+            <form method="POST" action="/add_event">
                 <label for="name">Name</label>
                 <div class="field">
                     <div class="control">
@@ -63,13 +63,13 @@
                 </div>
                 <div class="field">
                     <label class="checkbox">
-                        <input type="checkbox" name="charity">
+                        <input type="checkbox" name="charity" value="1">
                         Charity Event
                     </label>
                 </div>
                 <div class="field">
                     <label class="checkbox">
-                        <input type="checkbox" name="promoted">
+                        <input type="checkbox" name="promoted" value="1">
                         Promoted Event
                     </label>
                 </div>
@@ -95,6 +95,15 @@
                 </div>
                 <button class="button is-block is-info is-large is-fullwidth">Submit</button>
             </form>
+        </div>
+        <div class="added-events">
+            {% for event in events %}
+            <div class="event">
+                <h2>{{ event['name'] }}</h2>
+                <div>{{ event['tournament_organizer'] }}</div>
+                <div>{{ event['location'] }}</div>
+            </div>
+            {% endfor %}
         </div>
     </div>
     <footer>
