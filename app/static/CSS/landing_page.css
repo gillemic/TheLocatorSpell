@@ -57,7 +57,7 @@
 .search-button {
     border-radius: 2px;
     text-align: center;
-    background-color: #1EC5F7;
+    background-color: #1690a8;
     color: white;
     border-width: 0px;
     width: 7.5em;
@@ -84,16 +84,21 @@
     min-height: auto;
     max-height: 300px;
     padding: 2rem 1rem;
-    margin: 2rem 1rem;
+    margin-top: 3em;
+    margin-left: 1em;
+    margin-right: 1em;
     text-align: center;
-    border: 2px solid #1EC5F7;
+    border: 2px solid #1690a8;
     border-radius: 2px;
 }
 
 .footer {
-    margin-top: auto;
+    margin-top: 1rem;
     text-align: center;
     width: 100%;
     bottom: 0;
-    position: relative;
+}
+
+button:hover {
+    background-color: #1EC5F7;
 }
