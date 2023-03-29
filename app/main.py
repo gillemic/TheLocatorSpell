@@ -39,8 +39,14 @@ def events():
     SITE_ROOT = current_app.root_path
     json_url = os.path.join(SITE_ROOT, "static", "NEW_MOCK_DATA.json")
     data = json.load(open(json_url))
+    
     query = request.args.get('query')
-    return render_template('events.html', title='Events', data=data, query=query)
+    
+    conn = get_db_connection()
+    events = conn.execute('SELECT * FROM event').fetchall()
+    conn.close()
+    
+    return render_template('events.html', title='Events', data=data+events, query=query)
 
 @main.route('/add_event')
 @login_required
@@ -58,11 +64,11 @@ def add_event_post():
     location = request.form.get('location')
     event_type = request.form.get('event_type')
     category = request.form.get('category')
-    start_date = datetime.strptime(request.form.get('start_date'), '%Y-%m-%d').date()
+    start_date = datetime.strptime(request.form.get('start_date'), '%Y-%m-%d').date() if request.form.get('start_date') else None
     end_date = datetime.strptime(request.form.get('end_date'), '%Y-%m-%d').date() if request.form.get('end_date') else start_date
     # end_date = request.form.get('end_date')
-    charity = request.form.get('charity')
-    promoted = request.form.get('promoted')
+    charity = bool(request.form.get('charity'))
+    promoted = bool(request.form.get('promoted'))
     price = request.form.get('price')
     url = request.form.get('url')
     description = request.form.get('description')

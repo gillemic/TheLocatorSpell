@@ -14,7 +14,7 @@ h1 {
 
 /* topic and paragraph headers */
 h2 {
-    font-size: 28pt;
+    font-size: calc(1.5vw + 16px);
     color: black;
     font-weight: 600;
     line-height: 32px;
@@ -24,7 +24,7 @@ h2 {
 
 /* Sub header */
 h3 {
-    font-size: 21pt;
+    font-size: calc(1vw + 16px);
     color: black;
     font-weight: 500;
     line-height: 24px;

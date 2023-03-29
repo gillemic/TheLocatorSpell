@@ -353,7 +353,7 @@
     font-weight: bold;
 }
 
-#main-form h2 {
+#main-form h2, h3 {
     margin-top: 0;
     text-align: center;
 }
@@ -449,7 +449,7 @@
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 2; /* Sit on top */
+    z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
@@ -489,6 +489,7 @@
     right: 35px;
     z-index: 1; /* Sit on top */
     color: #d30e0e;
+    opacity: 0.9;
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
@@ -504,6 +505,12 @@
 .box {
     padding: 1rem;
     justify-content: center;
+    min-width: 25%;
+    width: auto;
+}
+
+.box .input {
+    width: 90%;
 }
 
 .added-events {

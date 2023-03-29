@@ -66,7 +66,7 @@
                   <fieldset>
                   
                   <!-- Form Name -->
-                  <legend>Spell Components</legend>
+                  <h3><b>Spell Components</b></h3>
                   
                   <!-- Multiple Checkboxes -->
                   <div class="form-group">
@@ -188,13 +188,14 @@
               </div>
           </div>
           <div id="pageData">
-            <div>
+            <div id="results">
               {% if query and (query != '') %}
               <p>Showing results for: "{{ query }}"</p>
               {% endif %}
             </div>
             <div class="event-search">
-              <input type="text" id="event-search" placeholder="Quick Cast" onkeyup="quickSearch(this.value); console.log(this.value);"/>
+              <input type="text" id="event-search" placeholder="Quick Cast" onkeyup="quickSearch(this.value)"/>
+              <button onclick="clearFields()">Clear</button>
             </div>
             <br>
             {% for piece in data %}
@@ -225,6 +226,7 @@
         <script type="application/javascript" src="{{ url_for('static', filename='JS/events_page.min.js') }}"></script>
         <script>
             eventsClickable();
+            hideModal();
         </script>
         {% if (query != '') %}
         <script>             
