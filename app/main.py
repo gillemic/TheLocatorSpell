@@ -42,9 +42,10 @@ def events():
     
     query = request.args.get('query')
     
-    conn = get_db_connection()
-    events = conn.execute('SELECT * FROM event').fetchall()
-    conn.close()
+    events = Event.query.all()
+    # conn = get_db_connection()
+    # events = conn.execute('SELECT * FROM event').fetchall()
+    # conn.close()
     
     return render_template('events.html', title='Events', data=data+events, query=query)
 
