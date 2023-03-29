@@ -15,7 +15,7 @@ def smart_truncate(content, length=100, suffix='...'):
         return ' '.join(content[:length+1].split(' ')[0:-1]) + suffix
     
 def get_db_connection():
-    conn = sqlite3.connect('instance/db.sqlite')
+    conn = sqlite3.connect(current_app.config['SQLALCHEMY_DATABASE_URI'])
     conn.row_factory = sqlite3.Row
     return conn
 
