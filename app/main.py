@@ -52,9 +52,7 @@ def events():
 @main.route('/add_event')
 @login_required
 def add_event():
-    conn = get_db_connection()
-    events = conn.execute('SELECT * FROM event').fetchall()
-    conn.close()
+    events = Event.query.all()
     return render_template('add_event.html', events=events)
 
 @main.route('/add_event', methods=['POST'])
