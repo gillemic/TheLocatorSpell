@@ -200,14 +200,14 @@
             <br>
             {% for piece in data %}
             <div class="event">
-                <h2>{{ piece.Name }}</h2>
-                <div class="body-text">{{ piece.Location }}</div>
+                <h2>{{ piece.name }}</h2>
+                <div class="body-text">{{ piece.location }}</div>
                 
-                <div class="call-out">{{ piece.Type if piece.Type}}</div>
+                <div class="call-out">{{ piece.event_type if piece.event_type}}</div>
                 
-                <div>{{ piece.Event_Cat if piece.Event_Cat }}</div>
+                <div>{{ piece.category if piece.category }}</div>
                 
-                <div>{{ '$' if piece.Price }}{{ piece.Price if piece.Price }}</div>
+                <div>{{ '$' if piece.price }}{{ piece.price if piece.price }}</div>
             </div>
             {% endfor %}
             <div id="no-results">No results found</div>
@@ -220,6 +220,8 @@
             <span class="close" onclick="hideModal()">&times;</span>
             <!-- Modal Content (Event Info) -->
             <div id="modal-content">
+              <div id="google-map">Google maps space</div>
+              <div id="event-info"></div>
             </div>
           </div>
         </div>

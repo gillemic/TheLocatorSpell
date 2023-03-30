@@ -481,6 +481,14 @@
     from {transform:scale(0)}
     to {transform:scale(1)}
 }
+
+#google-map {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 3rem 6rem;
+    border: 1px solid black;
+}
   
 /* The Close Button */
 .close {
