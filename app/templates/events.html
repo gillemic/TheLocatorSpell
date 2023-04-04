@@ -4,183 +4,31 @@
     <div class="main-page">
         <div class="page-content">
           <div class="form-horizontal spell-components">
+            <h2 id="spell-heading">Spell Components</h2>
               <form name="main-form" id="main-form">
-              <!--    <h2>Spell Components</h2>
-                  <label for="activity"><u>Activity</u></label>
+                {{ form.csrf_token }}
+                
+                <p>
+                  {{ form.activity.label }}
+                  {{ form.activity() }}
+                </p>
+                
+                <div>
+                  {{ form.location.label }}
                   <br>
-                  <input type="text" name="activity" id="activity"
-                      onkeyup="advancedSearch()"
-                      placeholder="Activity Name"
-                      value="{{ request.form['activity'] }}"></input>
-                  <br>
-                  <br>
-
-                  <label for="location"><u>Location</u></label>
-                  <br>
-                  <input type="text" name="location" id="location"
-                      onkeyup="advancedSearch()"
-                      placeholder="Location Name"
-                      value="{{ request.form['location'] }}"></input>
-                  <br>
-                  <label for="range">within</label>
-                  <br>
-                  <input type="range" min="1" max="100" value="100" class="slider" name="withinRange" id="withinRange" oninput="this.nextElementSibling.value = this.value">
-                  <output>100</output>
-                  <label for="miles">miles</label>
-                  <br>
-                  <br>
-
-                  <label for="type"><u>Event Type</u></label>
-                  <br>
-                  <input type="text" name="type" id="type"
-                      onkeyup="advancedSearch()"
-                      placeholder="Type (DnD, Pokemon, etc.)"
-                      value="{{ request.form['type'] }}"></input>
-                  <br>
-                  <br>
-
-                  <label for="category"><u>Category</u></label>
-                  <br>
-                  <input type="checkbox" id="localCheckbox" onclick="advancedSearch()">
-                  <label for="category">Local</label>
-                  <input type="checkbox" id="minorCheckbox" onclick="advancedSearch()">
-                  <label for="category">Minor</label>
-                  <input type="checkbox" id="majorCheckbox" onclick="advancedSearch()">
-                  <label for="category">Major</label>
-                  <br>
-                  <br>
-
-                  <label for="range"><u>Price</u></label>
-                  <br>
-                  <input type="range" min="0" max="100" value="100" class="slider" id="price" oninput="this.nextElementSibling.value = this.value" onclick="advancedSearch()">
-                  <output>100</output><p>dollars</p>
-                  <br>
-
-                  <button type="reset" onclick="clearFields()">Reset</button>
-                  <br>
-              </form>
-              <div class="showhide-wrapper">
-                  <a id="hide-button" onclick="hideSearch()">Hide</a>
-                  <a id="show-button" onclick="showSearch()">Show</a>
-              </div> -->
-                  <fieldset>
-                  
-                  <!-- Form Name -->
-                  <h3><b>Spell Components</b></h3>
-                  
-                  <!-- Multiple Checkboxes -->
-                  <div class="form-group">
-                    <label class="activity-header" for="activities">Activity</label>
-                    <br>
-                    <div id="activities">
-                      <div class="checkbox">
-                          <label for="activities-0">
-                          <input type="checkbox" name="activities" id="activities-0" value="Magic The Gathering">
-                          Magic The Gathering
-                          </label>
-                      </div>
-                      <div class="checkbox">
-                          <label for="activities-1">
-                          <input type="checkbox" name="activities" id="activities-1" value="Pokemon">
-                          Pokemon
-                          </label>
-                      </div>
-                      <div class="checkbox">
-                          <label for="activities-2">
-                          <input type="checkbox" name="activities" id="activities-2" value="Yu-Gi-Oh">
-                          Yu-Gi-Oh
-                          </label>
-                      </div>
-                      <div class="checkbox">
-                          <label for="activities-3">
-                          <input type="checkbox" name="activities" id="activities-3" value="DnD">
-                          DnD
-                          </label>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <!-- Select Basic -->
-                  <div class="form-group">
-                    <label class="" for="Location">Location</label>
-                    <div class="">
-                      <select id="Location" name="Location" class="form-control">
-                        <option value="1">Portland, OR</option>
-                        <option value="2">Seattle, WA</option>
-                      </select>
-                    </div>
-                  </div>
-                  
-                  <!-- Multiple Radios -->
-                  <div class="form-group">
-                    <label class="" for="price">Price</label>
-                    <br>
-                    <div id="event-price">
-                      <div class="radio">
-                          <label for="price-0">
-                          <input type="radio" name="price" id="price-0" value="0" checked="checked">
-                          Free
-                          </label>
-                      </div>
-                      <div class="radio">
-                          <label for="price-1">
-                          <input type="radio" name="price" id="price-1" value="5">
-                          $5+
-                          </label>
-                      </div>
-                      <div class="radio">
-                          <label for="price-2">
-                          <input type="radio" name="price" id="price-2" value="10">
-                          $10+
-                          </label>
-                      </div>
-                      <div class="radio">
-                          <label for="price-3">
-                          <input type="radio" name="price" id="price-3" value="20">
-                          $20+
-                          </label>
-                      </div>
-                      <div class="radio">
-                          <label for="price-4">
-                          <input type="radio" name="price" id="price-4" value="50">
-                          $50+
-                          </label>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <!-- Multiple Checkboxes -->
-                  <div class="form-group">
-                    <label class="" for="category">Category</label>
-                    <br>
-                    <div class="">
-                    <div class="checkbox">
-                      <label for="category-0">
-                        <input type="checkbox" name="category" id="category-0" value="local">
-                        Local
-                      </label>
-                      </div>
-                    <div class="checkbox">
-                      <label for="category-1">
-                        <input type="checkbox" name="category" id="category-1" value="minor">
-                        Regional
-                      </label>
-                      </div>
-                    <div class="checkbox">
-                      <label for="category-2">
-                        <input type="checkbox" name="category" id="category-2" value="major">
-                        Major
-                      </label>
-                      </div>
-                    <div class="checkbox">
-                      <label for="category-3">
-                        <input type="checkbox" name="category" id="category-3" value="major">
-                        Convention
-                      </label>
-                      </div>
-                    </div>
-                  </div>
-                  </fieldset>
+                  {{ form.location() }}
+                </div>
+                <br>
+                
+                <div>
+                  {{ form.price.label }}
+                  {{ form.price() }}
+                </div>
+                
+                <div>
+                  {{ form.category.label }}
+                  {{ form.category() }}
+                </div>
               </form>
               <div class="showhide-wrapper">
                   <a id="hide-button" onclick="hideSearch()">Hide Advanced Search</a>

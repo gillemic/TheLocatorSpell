@@ -7,6 +7,7 @@ from flask_login import login_required
 #from flask_flatpages import FlatPages
 from . import db
 from .models import Event
+from .forms import SearchForm, AddEventForm
 
 def smart_truncate(content, length=100, suffix='...'):
     if len(content) <= length:
@@ -43,17 +44,16 @@ def events():
     query = request.args.get('query')
     
     events = Event.query.all()
-    # conn = get_db_connection()
-    # events = conn.execute('SELECT * FROM event').fetchall()
-    # conn.close()
-    
-    return render_template('events.html', title='Events', data=data+events, query=query)
+
+    form = SearchForm()    
+    return render_template('events.html', title='Events', data=data+events, query=query, form=form)
 
 @main.route('/add_event')
 @login_required
 def add_event():
     events = Event.query.all()
-    return render_template('add_event.html', events=events)
+    form = AddEventForm()
+    return render_template('add_event.html', events=events, form=form)
 
 @main.route('/add_event', methods=['POST'])
 def add_event_post():

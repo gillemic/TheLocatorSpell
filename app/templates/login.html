@@ -2,11 +2,31 @@
 
 {% block app_content %}
 <div class="main-page box">
-    <h2>Login</h2>
     <div class="page-content">    
         <div class="box">
             <form method="POST" action="/login">
-                <div class="field">
+                <h2 id="spell-heading">Login</h2>
+                {{ form.csrf_token }}
+                
+                <p>
+                  {{ form.email.label }}
+                  <br>
+                  {{ form.email() }}
+                </p>
+
+                <p>
+                    {{ form.password.label }}
+                    <br>
+                    {{ form.password() }}
+                </p>
+
+                <div>
+                    {{ form.remember() }}
+                    {{ form.remember.label }}
+                </div>
+                <br>
+
+                <!-- <div class="field">
                     <div class="control">
                         <input class="input is-large" type="email" name="email" placeholder="Your Email" autofocus="">
                     </div>
@@ -21,7 +41,7 @@
                         <input type="checkbox" name="remember">
                         Remember me
                     </label>
-                </div>
+                </div> -->
                 <button class="button is-block is-info is-large is-fullwidth">Login</button>
             </form>
         </div>

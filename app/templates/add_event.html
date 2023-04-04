@@ -2,97 +2,92 @@
 
 {% block app_content %}
 <div class="main-page">
-    <h2>Add Event</h2>
+    
     <div class="page-content">
         <div class="box">
+            <h2>Add Event</h2>
             <form method="POST" action="/add_event">
-                <label for="name">Name</label>
-                <div class="field">
-                    <div class="control">
-                        <input class="input is-large" type="text" name="name" placeholder="Event Name" autofocus="">
-                    </div>
+                {{ form.csrf_token }}
+                
+                <p>
+                  {{ form.name.label }}
+                  <br>
+                  {{ form.name(size=30) }}
+                </p>
+                <br>
+
+                <p>
+                  {{ form.tournament_organizer.label }}
+                  <br>
+                  {{ form.tournament_organizer(size=30) }}
+                </p>
+                <br>
+
+                <p>
+                  {{ form.location.label }}
+                  <br>
+                  {{ form.location(size=30) }}
+                </p>
+                <br>
+
+                <p>
+                  {{ form.event_type.label }}
+                  <br>
+                  {{ form.event_type(size=30) }}
+                </p>
+                <br>
+
+                <div>
+                  {{ form.category.label }}
+                  {{ form.category() }}
                 </div>
                 <br>
-                <label for="tournament_organizer">Tournament Organizer</label>
-                <div class="field">
-                    <div class="control">
-                        <input class="input is-large" type="text" name="tournament_organizer" placeholder="Tournament Organizer">
-                    </div>
+
+                <div>
+                    {{ form.start_date.label }}
+                    <br>
+                    {{ form.start_date() }}
                 </div>
                 <br>
-                <label for="location">Location</label>
-                <div class="field">
-                    <div class="control">
-                        <input class="input is-large" type="text" name="location" placeholder="Location (Address)">
-                    </div>
+
+                <div>
+                    {{ form.end_date.label }}
+                    <br>
+                    {{ form.end_date() }}
                 </div>
                 <br>
-                <label for="event_type">Event Type</label>
-                <div class="field">
-                    <div class="control">
-                        <input class="input is-large" type="text" name="event_type" placeholder="Event Type (DnD, Magic, Pokemon, etc.)">
-                    </div>
-                </div>
+
+                <p>
+                    {{ form.charity() }}
+                    {{ form.charity.label }}
+                </p>
+
+                <p>
+                    {{ form.promoted() }}
+                    {{ form.promoted.label }}
+                </p>
                 <br>
-                <label for="category">Category</label>
-                <div class="field">
-                    <label class="checkbox">
-                        <fieldset>
-                            <input type="radio" name="category" value="local">
-                            Local
-                            <input type="radio" name="category" value="minor">
-                            Minor
-                            <input type="radio" name="category" value="major">
-                            Major
-                        </fieldset>
-                    </label>
-                </div>
+
+                <p>
+                    {{ form.price.label }}
+                    <br>
+                    {{ form.price(min=0, size=30) }}
+                </p>
                 <br>
-                <label for="start_date">Start Date</label>
-                <div class="field">
-                    <div class="control">
-                        <input class="input is-large" type="date" name="start_date" placeholder="Start Date">
-                    </div>
-                </div>
+
+                <p>
+                    {{ form.url.label }}
+                    <br>
+                    {{ form.url(size=30) }}
+                </p>
                 <br>
-                <label for="end_date">End Date</label>
-                <div class="field">
-                    <div class="control">
-                        <input class="input is-large" type="date" name="end_date" placeholder="End Date">
-                    </div>
-                </div>
-                <div class="field">
-                    <label class="checkbox">
-                        <input type="checkbox" name="charity" value="1">
-                        Charity Event
-                    </label>
-                </div>
-                <div class="field">
-                    <label class="checkbox">
-                        <input type="checkbox" name="promoted" value="1">
-                        Promoted Event
-                    </label>
-                </div>
-                <label for="price">Price</label>
-                <div class="field">
-                    <div class="control">
-                        <input class="input is-large" type="number" name="price" placeholder="Price (dollars)">
-                    </div>
-                </div>
-                <br>
-                <label for="url">URL</label>
-                <div class="field">
-                    <div class="control">
-                        <input class="input is-large" type="text" name="url" placeholder="URL of event (optional)">
-                    </div>
-                </div>
-                <br>
-                <label for="description">Description</label>
-                <div class="field">
-                    <div class="control">
-                        <textarea class="input is-large" type="text" name="description" placeholder="Decription of event"></textarea>
-                    </div>
-                </div>
+
+                <p>
+                    {{ form.description.label }}
+                    <br>
+                    {{ form.description(rows=5, cols=50) }}
+                </p>
+
                 <button class="button is-block is-info is-large is-fullwidth">Submit</button>
             </form>
         </div>

@@ -102,7 +102,7 @@
 
     .container {
         display: flex;
-        flex-wrap: wrap-reverse;
+        flex-wrap: wrap;
         margin: auto;
         width: 80%;
     }
@@ -298,6 +298,10 @@
     padding: 2rem;
 }
 
+#spell-heading {
+    margin-top: 0.5rem;
+}
+
 .form-horizontal {
     display: block;
     padding: 0 0.5rem;
@@ -327,7 +331,7 @@
 }
 
 .showhide-wrapper {
-    display: block;
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -351,6 +355,11 @@
 #main-form u {
     font-size: 1.75rem;
     font-weight: bold;
+}
+
+#main-form ul {
+    list-style: none;
+    padding-inline-start: 1rem;
 }
 
 #main-form h2, h3 {
@@ -512,17 +521,31 @@
 
 .box {
     padding: 1rem;
-    justify-content: center;
     min-width: 25%;
     width: auto;
+    margin: auto;
+}
+
+.box h2 {
+    width: 100%;
+    margin: auto;
+    text-align: left;
 }
 
 .box .input {
     width: 90%;
 }
 
+.box ul {
+    list-style: none;
+    padding-inline-start: 1rem;
+}
+
 .added-events {
     display: flex;
+    flex: 1 1 25%;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .field {
