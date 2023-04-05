@@ -37,7 +37,7 @@ def login_post():
 def signup():
     form = SignupForm()
     return render_template('signup.html', form=form)
-
+'''
 @auth.route('/signup', methods=['POST'])
 def signup_post():
     # code to validate and add user to database goes here
@@ -71,7 +71,7 @@ def signup_post():
     db.session.add(new_user)
     db.session.commit()
     return redirect(url_for('auth.login'))
-
+'''
     
 @auth.route('/logout')
 @login_required
