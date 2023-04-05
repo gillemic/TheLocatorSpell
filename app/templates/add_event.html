@@ -97,6 +97,7 @@
                 <h2>{{ event['name'] }}</h2>
                 <div>{{ event['tournament_organizer'] }}</div>
                 <div>{{ event['location'] }}</div>
+                <input type="hidden" class="eventId" value={{ loop.index }}>
             </div>
             {% endfor %}
         </div>
