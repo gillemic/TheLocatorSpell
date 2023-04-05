@@ -3,7 +3,7 @@ from flask import Blueprint, render_template, redirect, url_for, request, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user
 from .models import Admin
-from .forms import LoginForm
+from .forms import LoginForm, SignupForm
 from . import db
 
 auth = Blueprint('auth', __name__)
@@ -32,10 +32,11 @@ def login_post():
     login_user(user, remember=remember)
     return redirect(url_for('main.add_event'))
 
-'''
+
 @auth.route('/signup')
 def signup():
-    return render_template('signup.html')
+    form = SignupForm()
+    return render_template('signup.html', form=form)
 
 @auth.route('/signup', methods=['POST'])
 def signup_post():
@@ -70,7 +71,7 @@ def signup_post():
     db.session.add(new_user)
     db.session.commit()
     return redirect(url_for('auth.login'))
-'''
+
     
 @auth.route('/logout')
 @login_required

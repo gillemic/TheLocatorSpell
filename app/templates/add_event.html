@@ -9,29 +9,30 @@
             <form method="POST" action="/add_event">
                 {{ form.csrf_token }}
                 
+                <br>
                 <p>
-                  {{ form.name.label }}
+                  {{ form.name.label }} (Required)
                   <br>
                   {{ form.name(size=30) }}
                 </p>
                 <br>
 
                 <p>
-                  {{ form.tournament_organizer.label }}
+                  {{ form.tournament_organizer.label }} (Required)
                   <br>
                   {{ form.tournament_organizer(size=30) }}
                 </p>
                 <br>
 
                 <p>
-                  {{ form.location.label }}
+                  {{ form.location.label }} (Required)
                   <br>
                   {{ form.location(size=30) }}
                 </p>
                 <br>
 
                 <p>
-                  {{ form.event_type.label }}
+                  {{ form.event_type.label }} (Required)
                   <br>
                   {{ form.event_type(size=30) }}
                 </p>
@@ -44,7 +45,7 @@
                 <br>
 
                 <div>
-                    {{ form.start_date.label }}
+                    {{ form.start_date.label }} (Required)
                     <br>
                     {{ form.start_date() }}
                 </div>
@@ -66,10 +67,9 @@
                     {{ form.promoted() }}
                     {{ form.promoted.label }}
                 </p>
-                <br>
 
                 <p>
-                    {{ form.price.label }}
+                    {{ form.price.label }} (Required)
                     <br>
                     {{ form.price(min=0, size=30) }}
                 </p>
@@ -83,7 +83,7 @@
                 <br>
 
                 <p>
-                    {{ form.description.label }}
+                    {{ form.description.label }} (Required)
                     <br>
                     {{ form.description(rows=5, cols=50) }}
                 </p>

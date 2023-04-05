@@ -16,7 +16,12 @@ class LoginForm(FlaskForm):
     remember = BooleanField('Remember me')
 
 class SignupForm(FlaskForm):
-    pass
+    email = StringField('Email', validators=[InputRequired(),
+                                             Length(min=6, max=100)])
+    name = StringField('Name', validators=[InputRequired(),
+                                             Length(max=100)])
+    password = PasswordField('Password', validators=[InputRequired(),
+                                                     Length(min=6, max=100)])
 
 class SearchForm(FlaskForm):
     activity = MultiCheckboxField('Activity', choices=['Magic The Gathering', 'Pokemon', 

@@ -4,20 +4,21 @@
 <div class="main-page box">
     <div class="page-content">    
         <div class="box">
+            <h2>Login</h2>
             <form method="POST" action="/login">
-                <h2 id="spell-heading">Login</h2>
+                <br>
                 {{ form.csrf_token }}
                 
                 <p>
                   {{ form.email.label }}
                   <br>
-                  {{ form.email() }}
+                  {{ form.email(size=30) }}
                 </p>
 
                 <p>
                     {{ form.password.label }}
                     <br>
-                    {{ form.password() }}
+                    {{ form.password(size=30) }}
                 </p>
 
                 <div>

@@ -2,28 +2,28 @@
 
 {% block app_content %}
 <div class="main-page">
-    <h2>Sign Up</h2>
     <div class="page-content">
         <div class="box">
+            <h2>Sign Up</h2>
             <form method="POST" action="/signup">
-                <div class="field">
-                    <div class="control">
-                        <input class="input is-large" type="email" name="email" placeholder="Email" autofocus="">
-                    </div>
-                </div>
-
-                <div class="field">
-                    <div class="control">
-                        <input class="input is-large" type="text" name="name" placeholder="Name" autofocus="">
-                    </div>
-                </div>
-
-                <div class="field">
-                    <div class="control">
-                        <input class="input is-large" type="password" name="password" placeholder="Password">
-                    </div>
-                </div>
-
+                {{ form.csrf_token }}
+                <br>
+                <p>
+                  {{ form.email.label }}
+                  <br>
+                  {{ form.email(size=30) }}
+                </p>
+                <p>
+                  {{ form.name.label }}
+                  <br>
+                  {{ form.name(size=30) }}
+                </p>
+                <p>
+                  {{ form.password.label }}
+                  <br>
+                  {{ form.password(size=30) }}
+                </p>
+                <br>
                 <button class="button is-block is-info is-large is-fullwidth">Sign Up</button>
             </form>
         </div>
