@@ -86,6 +86,48 @@ def add_event_post():
     return redirect(url_for('main.add_event'))
 
 
+@main.route('/<int:id>/edit/', methods=['GET', 'POST'])
+@login_required
+def edit(id):
+    event = Event.query.get_or_404(id)
+    form = AddEventForm()
+
+    if request.method == 'POST':
+        # code to validate and add user to database goes here
+        name = request.form.get('name')
+        tournament_organizer = request.form.get('tournament_organizer')
+        location = request.form.get('location')
+        event_type = request.form.get('event_type')
+        category = request.form.get('category')
+        start_date = datetime.strptime(request.form.get('start_date'), '%Y-%m-%d').date() if request.form.get('start_date') else None
+        end_date = datetime.strptime(request.form.get('end_date'), '%Y-%m-%d').date() if request.form.get('end_date') else start_date
+        # end_date = request.form.get('end_date')
+        charity = bool(request.form.get('charity'))
+        promoted = bool(request.form.get('promoted'))
+        price = request.form.get('price')
+        url = request.form.get('url')
+        description = request.form.get('description')
+
+        event.name = name
+        event.tournament_organizer = tournament_organizer
+        event.location = location
+        event.event_type = event_type
+        event.category = category
+        event.start_date = start_date
+        event.end_date = end_date
+        event.charity = charity
+        event.promoted = promoted
+        event.price = price
+        event.url = url
+        event.description = description
+
+        db.session.add(event)
+        db.session.commit()
+
+        flash('Event updated!')
+        return redirect(url_for('main.add_event'))
+    
+    return render_template('edit.html', event=event, form=form)
 
 @main.route('/blog')
 def blog():

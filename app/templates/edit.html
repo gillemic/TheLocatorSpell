@@ -2,105 +2,94 @@
 
 {% block app_content %}
 <div class="main-page">
-    
     <div class="page-content">
         <div class="box">
-            <h2>Add Event</h2>
-            <form method="POST" action="/add_event">
+            <a href="javascript:history.back()">Back to Events</a>
+            <h2>Edit Event</h2>
+            <form method="POST">
                 {{ form.csrf_token }}
                 
                 <br>
                 <p>
                   {{ form.name.label }} (Required)
                   <br>
-                  {{ form.name(size=30) }}
+                  {{ form.name(size=30, value=event.name) }}
                 </p>
                 <br>
 
                 <p>
                   {{ form.tournament_organizer.label }} (Required)
                   <br>
-                  {{ form.tournament_organizer(size=30) }}
+                  {{ form.tournament_organizer(size=30, value=event.tournament_organizer) }}
                 </p>
                 <br>
 
                 <p>
                   {{ form.location.label }} (Required)
                   <br>
-                  {{ form.location(size=30) }}
+                  {{ form.location(size=30, value=event.location) }}
                 </p>
                 <br>
 
                 <p>
                   {{ form.event_type.label }} (Required)
                   <br>
-                  {{ form.event_type(size=30) }}
+                  {{ form.event_type(size=30, value=event.event_type) }}
                 </p>
                 <br>
 
                 <div>
                   {{ form.category.label }}
-                  {{ form.category() }}
+                  {{ form.category(value=event.category) }}
                 </div>
                 <br>
 
                 <div>
                     {{ form.start_date.label }} (Required)
                     <br>
-                    {{ form.start_date() }}
+                    {{ form.start_date(value=event.start_date) }}
                 </div>
                 <br>
 
                 <div>
                     {{ form.end_date.label }}
                     <br>
-                    {{ form.end_date() }}
+                    {{ form.end_date(value=event.end_date) }}
                 </div>
                 <br>
 
                 <p>
-                    {{ form.charity() }}
+                    {{ form.charity(value=event.charity) }}
                     {{ form.charity.label }}
                 </p>
 
                 <p>
-                    {{ form.promoted() }}
+                    {{ form.promoted(value=event.promoted) }}
                     {{ form.promoted.label }}
                 </p>
 
                 <p>
                     {{ form.price.label }} (Required)
                     <br>
-                    {{ form.price(min=0, size=30) }}
+                    {{ form.price(min=0, size=30, value=event.price) }}
                 </p>
                 <br>
 
                 <p>
                     {{ form.url.label }}
                     <br>
-                    {{ form.url(size=30) }}
+                    {{ form.url(size=30, value=event.url) }}
                 </p>
                 <br>
 
                 <p>
                     {{ form.description.label }} (Required)
                     <br>
-                    {{ form.description(rows=5, cols=50) }}
+                    <textarea cols="50" id="description" maxlength="1000" name="description" required rows="5">{{event.description}}</textarea>
                 </p>
 
-                <button class="button is-block is-info is-large is-fullwidth">Submit</button>
+                <button type="submit" class="button is-block is-info is-large is-fullwidth">Submit</button>
             </form>
-        </div>
-        <div class="added-events">
-            {% for event in events %}
-            <div class="event">
-                <h2>{{ event['name'] }}</h2>
-                <div>{{ event['tournament_organizer'] }}</div>
-                <div>{{ event['location'] }}</div>
-                <a href="{{ url_for('main.edit', id=loop.index) }}">Edit</a>
-                <input type="hidden" class="eventId" value={{ loop.index }}>
-            </div>
-            {% endfor %}
         </div>
     </div>
     <footer>
