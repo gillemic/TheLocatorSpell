@@ -49,13 +49,28 @@
             {% for piece in data %}
             <div class="event">
                 <h2>{{ piece.name }}</h2>
-                <div class="body-text">{{ piece.location }}</div>
+
+                <div class="body-text"><div class="call-out">Organizer: </div>{{ piece.tournament_organizer if piece.tournament_organizer else 'N/A' }}</div>
+
+                <div class="hide body-text"><div class="call-out">Location: </div>{{ piece.location }}</div>
                 
-                <div class="call-out">{{ piece.event_type if piece.event_type}}</div>
+                <div class="body-text"><div class="call-out">Event type: </div>{{ piece.event_type if piece.event_type else 'N/A' }}</div>
                 
-                <div>{{ piece.category if piece.category }}</div>
+                <div class="body-text"><div class="call-out">Category: </div>{{ piece.category if piece.category else 'N/A' }}</div>
+
+                <div class="hide body-text"><div class="call-out">Start Date: </div>{{ piece.start_date }}</div>
+
+                <div class="hide body-text"><div class="call-out">End Date: </div>{{ piece.end_date if piece.end_date else 'N/A' }}</div>
+
+                <div class="hide body-text"><div class="call-out">Charity event: </div>{{ 'Yes' if piece.charity else 'No' }}</div>
+
+                <div class="hide body-text"><div class="call-out">Promoted event: </div>{{ 'Yes' if piece.promoted else 'No' }}</div>
                 
-                <div>{{ '$' if piece.price }}{{ piece.price if piece.price }}</div>
+                <div class="hide body-text"><div class="call-out">Price: </div>{{ '$' if piece.price }}{{ piece.price if piece.price else 'Free' }}</div>
+
+                <div class="hide body-text"><div class="call-out">URL: </div>{{ piece.url if piece.url else 'N/A' }}</div>
+
+                <div class="hide body-text"><div class="call-out">Description: </div>{{ piece.description }}</div>
 
                 <input type="hidden" class="eventId" value={{ loop.index }}>
             </div>

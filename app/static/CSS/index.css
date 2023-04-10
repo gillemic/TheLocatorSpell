@@ -428,6 +428,10 @@
     color: #5C2B69;
 }
 
+.event div {
+    margin: 0.5rem 0;
+}
+
 .event-search {
     display:flex;
     justify-content: center;
@@ -497,6 +501,10 @@
     text-align: center;
     padding: 3rem 6rem;
     border: 1px solid black;
+}
+
+#event-info .body-text {
+    margin: 0.5rem 0;
 }
   
 /* The Close Button */
