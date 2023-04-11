@@ -56,11 +56,11 @@
                 
                 <div class="body-text"><div class="call-out">Event type: </div>{{ piece.event_type if piece.event_type else 'N/A' }}</div>
                 
-                <div class="body-text"><div class="call-out">Category: </div>{{ piece.category if piece.category else 'N/A' }}</div>
+                <div class="hide body-text"><div class="call-out">Category: </div>{{ piece.category if piece.category else 'N/A' }}</div>
 
-                <div class="hide body-text"><div class="call-out">Start Date: </div>{{ piece.start_date }}</div>
+                <div class="body-text"><div class="call-out">Start Date: </div>{{ piece.start_date.strftime('%m/%d/%Y') }}</div>
 
-                <div class="hide body-text"><div class="call-out">End Date: </div>{{ piece.end_date if piece.end_date else 'N/A' }}</div>
+                <div class="hide body-text"><div class="call-out">End Date: </div>{{ piece.end_date.strftime('%m/%d/%Y') if piece.end_date else 'N/A' }}</div>
 
                 <div class="hide body-text"><div class="call-out">Charity event: </div>{{ 'Yes' if piece.charity else 'No' }}</div>
 

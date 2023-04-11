@@ -432,10 +432,6 @@
     margin: 0.5rem 0;
 }
 
-.event a {
-    color: green;
-}
-
 .event-search {
     display:flex;
     justify-content: center;
@@ -452,6 +448,14 @@
 .event-search button {
     margin: 0.5rem;
     align-self: center;
+}
+
+.edit-delete {
+    display: inline-flex;
+}
+
+.edit-delete * {
+    margin: 0 0.5rem;
 }
 
 .sponsor-text {
