@@ -91,6 +91,10 @@ def add_event_post():
 def edit(id):
     event = Event.query.get_or_404(id)
     form = AddEventForm()
+    form.category.default = event.category
+    form.charity.default = event.charity
+    form.promoted.default = event.promoted
+    form.process()
 
     if request.method == 'POST':
         # code to validate and add user to database goes here
@@ -128,6 +132,15 @@ def edit(id):
         return redirect(url_for('main.add_event'))
     
     return render_template('edit.html', event=event, form=form)
+
+@main.post('/<int:id>/delete/')
+@login_required
+def delete(id):
+    event = Event.query.get_or_404(id)
+    db.session.delete(event)
+    db.session.commit()
+    flash('Event deleted!')
+    return redirect(url_for('main.add_event'))
 
 @main.route('/blog')
 def blog():
