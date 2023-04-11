@@ -133,6 +133,15 @@ def edit(id):
     
     return render_template('edit.html', event=event, form=form)
 
+@main.post('/<int:id>/delete/')
+@login_required
+def delete(id):
+    event = Event.query.get_or_404(id)
+    db.session.delete(event)
+    db.session.commit()
+    flash('Event deleted!')
+    return redirect(url_for('main.add_event'))
+
 @main.route('/blog')
 def blog():
      return render_template('blog.html')
