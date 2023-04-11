@@ -27,7 +27,7 @@
                 <p>
                   {{ form.location.label }} (Required)
                   <br>
-                  {{ form.location(size=30) }}
+                  {{ form.location(size=30, render_kw={"placeholder": "City, State (ex. Portland, OR)"}) }}
                 </p>
                 <br>
 
