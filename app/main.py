@@ -37,16 +37,11 @@ def about():
 
 @main.route('/events')
 def events():
-    SITE_ROOT = current_app.root_path
-    json_url = os.path.join(SITE_ROOT, "static", "NEW_MOCK_DATA.json")
-    data = json.load(open(json_url))
-    
     query = request.args.get('query')
-    
     events = Event.query.all()
+    form = SearchForm()
 
-    form = SearchForm()    
-    return render_template('events.html', title='Events', data=data+events, query=query, form=form)
+    return render_template('events.html', title='Events', data=events, query=query, form=form)
 
 @main.route('/add_event')
 @login_required
