@@ -13,28 +13,28 @@
                 <p>
                   {{ form.name.label }} (Required)
                   <br>
-                  {{ form.name(size=30) }}
+                  {{ form.name(size=30, placeholder="Name of event") }}
                 </p>
                 <br>
 
                 <p>
                   {{ form.tournament_organizer.label }} (Required)
                   <br>
-                  {{ form.tournament_organizer(size=30) }}
+                  {{ form.tournament_organizer(size=30, placeholder="Name of tournament organizer") }}
                 </p>
                 <br>
 
                 <p>
                   {{ form.location.label }} (Required)
                   <br>
-                  {{ form.location(size=30, render_kw={"placeholder": "City, State (ex. Portland, OR)"}) }}
+                  {{ form.location(size=30, placeholder="City, State (ex. Portland, OR)") }}
                 </p>
                 <br>
 
                 <p>
                   {{ form.event_type.label }} (Required)
                   <br>
-                  {{ form.event_type(size=30) }}
+                  {{ form.event_type(size=30, placeholder="DnD, Pokemon, Magic, etc.") }}
                 </p>
                 <br>
 
@@ -78,14 +78,14 @@
                 <p>
                     {{ form.url.label }}
                     <br>
-                    {{ form.url(size=30) }}
+                    {{ form.url(size=30, placeholder="URL of website") }}
                 </p>
                 <br>
 
                 <p>
                     {{ form.description.label }} (Required)
                     <br>
-                    {{ form.description(rows=5, cols=50) }}
+                    {{ form.description(rows=5, cols=50, placeholder="Enter a description of the event") }}
                 </p>
 
                 <button class="button is-block is-info is-large is-fullwidth">Submit</button>
