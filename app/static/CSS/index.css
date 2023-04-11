@@ -432,6 +432,10 @@
     margin: 0.5rem 0;
 }
 
+.event a {
+    color: green;
+}
+
 .event-search {
     display:flex;
     justify-content: center;
