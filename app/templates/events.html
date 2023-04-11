@@ -70,9 +70,11 @@
 
                 <div class="hide body-text"><div class="call-out">URL: </div>{{ piece.url if piece.url else 'N/A' }}</div>
 
-                <div class="hide body-text"><div class="call-out">Description: </div>{{ piece.description }}</div>
+                <div class="event-description">
+                  <div class="hide body-text"><div class="call-out">Description: </div>{{ piece.description }}</div>
+                </div>
 
-                <input type="hidden" class="eventId" value={{ loop.index }}>
+                <input type="hidden" class="eventId" value={{ piece.id }}>
             </div>
             {% endfor %}
             <div id="no-results">No results found</div>

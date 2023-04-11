@@ -560,6 +560,7 @@
 .added-events {
     display: flex;
     flex: 1 1 25%;
+    flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
 }
