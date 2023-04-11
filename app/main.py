@@ -91,6 +91,10 @@ def add_event_post():
 def edit(id):
     event = Event.query.get_or_404(id)
     form = AddEventForm()
+    form.category.default = event.category
+    form.charity.default = event.charity
+    form.promoted.default = event.promoted
+    form.process()
 
     if request.method == 'POST':
         # code to validate and add user to database goes here

@@ -40,7 +40,7 @@
 
                 <div>
                   {{ form.category.label }}
-                  {{ form.category(value=event.category) }}
+                  {{ form.category() }}
                 </div>
                 <br>
 
@@ -59,12 +59,12 @@
                 <br>
 
                 <p>
-                    {{ form.charity(value=event.charity) }}
+                    {{ form.charity() }}
                     {{ form.charity.label }}
                 </p>
 
                 <p>
-                    {{ form.promoted(value=event.promoted) }}
+                    {{ form.promoted() }}
                     {{ form.promoted.label }}
                 </p>
 
