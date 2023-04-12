@@ -414,7 +414,7 @@
     max-width: 20%;
     min-width: 200px;
     min-height: 200px;
-    box-shadow:  0 6px 4px -4px rgba(0,0,0,0.7);
+    box-shadow:  4px 6px 8px 2px rgba(0,0,0,0.7);
     border-radius: 1em;
     border: 2px solid;
     border-color: #f7d1ad;
