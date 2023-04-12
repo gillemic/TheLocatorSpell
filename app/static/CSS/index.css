@@ -419,6 +419,13 @@
     border: 2px solid;
     border-color: #f7d1ad;
     color: Black;
+    transition: 0.3s;
+}
+
+.event:hover {
+    background-color: #d6cec7;
+    border-color: #d39b66;
+    cursor: pointer;
 }
 
 .event h2 {
