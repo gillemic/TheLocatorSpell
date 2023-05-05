@@ -10,24 +10,24 @@
                 
                 <p>
                   {{ form.activity.label }}
-                  {{ form.activity() }}
+                  {{ form.activity(**{"onchange":"spellComponentSearch()"}) }}
                 </p>
                 
                 <div>
                   {{ form.location.label }}
                   <br>
-                  {{ form.location() }}
+                  {{ form.location(**{"onchange":"spellComponentSearch()"}) }}
                 </div>
                 <br>
                 
                 <div>
                   {{ form.price.label }}
-                  {{ form.price() }}
+                  {{ form.price(**{"onchange":"spellComponentSearch()"}) }}
                 </div>
                 
                 <div>
                   {{ form.category.label }}
-                  {{ form.category() }}
+                  {{ form.category(**{"onchange":"spellComponentSearch()"}) }}
                 </div>
               </form>
               <div class="showhide-wrapper">
