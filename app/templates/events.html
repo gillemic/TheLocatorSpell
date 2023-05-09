@@ -48,13 +48,13 @@
             <br>
             {% for piece in data %}
             <div class="event">
-                <h2>{{ piece.name }}</h2>
+                <h2><div class="event_name">{{ piece.name }}</div></h2>
 
-                <div class="body-text"><div class="call-out">Organizer: </div>{{ piece.tournament_organizer if piece.tournament_organizer else 'N/A' }}</div>
+                <div class="body-text"><div class="call-out">Organizer: </div><div class="event_organizer">{{ piece.tournament_organizer if piece.tournament_organizer else 'N/A' }}</div></div>
 
                 <div class="hide body-text"><div class="call-out">Location: </div>{{ piece.location }}</div>
                 
-                <div class="body-text"><div class="call-out">Event type: </div>{{ piece.event_type if piece.event_type else 'N/A' }}</div>
+                <div class="body-text"><div class="call-out">Event type: </div><div class="event_type">{{ piece.event_type if piece.event_type else 'N/A' }}</div></div>
                 
                 <div class="hide body-text"><div class="call-out">Category: </div>{{ piece.category if piece.category else 'N/A' }}</div>
 
