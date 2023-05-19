@@ -2,6 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import (StringField, TextAreaField, IntegerField, SelectField, DateField,
                      SelectMultipleField, BooleanField, RadioField, PasswordField, widgets)
 from wtforms.validators import InputRequired, Length
+from datetime import date
 
 class MultiCheckboxField(SelectMultipleField):
     widget = widgets.ListWidget(prefix_label=False)
@@ -27,6 +28,8 @@ class SearchForm(FlaskForm):
     activity = MultiCheckboxField('Activity', choices=['Magic The Gathering', 'Pokemon', 
                                                           'Yu-Gi-Oh', 'DnD'])
     location = SelectField('Location', choices=['Any', 'Portland, OR', 'Seattle, WA'])
+    start_date = DateField('Start Date', default=date.today())
+    end_date = DateField('End Date', default=None)
     price = RadioField('Price', choices=['Any', 'Free', '$5+', '$10+', '$20+', '$50+'], default='Any')
     category = MultiCheckboxField('Category', choices=['Local', 'Regional', 'Major', 'Convention'])
 

@@ -8,15 +8,29 @@
               <form name="main-form" id="main-form">
                 {{ form.csrf_token }}
                 
-                <p>
+                <div>
                   {{ form.activity.label }}
                   {{ form.activity(**{"onchange":"spellComponentSearch()"}) }}
-                </p>
+                </div>
                 
                 <div>
                   {{ form.location.label }}
                   <br>
                   {{ form.location(**{"onchange":"spellComponentSearch()"}) }}
+                </div>
+                <br>
+
+                <div>
+                  {{ form.start_date.label }}
+                  <br>
+                  {{ form.start_date(**{"onchange":"spellComponentSearch()"}) }}
+                </div>
+                <br>
+
+                <div>
+                  {{ form.end_date.label }}
+                  <br>
+                  {{ form.end_date(**{"onchange":"spellComponentSearch()"}) }}
                 </div>
                 <br>
                 
@@ -58,7 +72,7 @@
                 
                 <div class="hide body-text"><div class="call-out">Category: </div>{{ piece.category if piece.category else 'N/A' }}</div>
 
-                <div class="body-text"><div class="call-out">Start Date: </div>{{ piece.start_date.strftime('%m/%d/%Y') }}</div>
+                <div class="body-text"><div class="call-out">Start Date: </div><div class="event_start">{{ piece.start_date.strftime('%m/%d/%Y') }}</div></div>
 
                 <div class="hide body-text"><div class="call-out">End Date: </div>{{ piece.end_date.strftime('%m/%d/%Y') if piece.end_date else 'N/A' }}</div>
 
